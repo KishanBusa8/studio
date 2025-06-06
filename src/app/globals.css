@@ -51,22 +51,22 @@
 
   .dark {
     --background: 240 6% 10%; /* Very Dark Grey/Almost Black */
-    --foreground: 240 5% 95%; /* Light Grey/Off-white */
+    --foreground: 0 0% 95%; /* Light Grey/Off-white */
 
     --card: 240 6% 12%; /* Slightly Lighter Dark Grey for cards */
-    --card-foreground: 240 5% 95%;
+    --card-foreground: 0 0% 95%;
 
     --popover: 240 6% 10%; 
-    --popover-foreground: 240 5% 95%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 240 4% 80%; /* Lighter Grey for primary buttons */
-    --primary-foreground: 240 10% 3.9%; /* Dark text for primary buttons */
+    --primary: 270 60% 65%; /* Vibrant Purple */
+    --primary-foreground: 0 0% 98%; /* White text for high contrast on purple */
 
     --secondary: 240 5% 20%; /* Darker Grey for secondary elements */
-    --secondary-foreground: 240 5% 85%; /* Lighter grey text for secondary */
+    --secondary-foreground: 0 0% 85%; /* Lighter grey text for secondary */
 
     --muted: 240 5% 18%; /* Muted Grey */
-    --muted-foreground: 240 5% 60%; /* Muted text */
+    --muted-foreground: 0 0% 60%; /* Muted text */
 
     --accent: 0 0% 98%; /* Off-white for accent */
     --accent-foreground: 240 10% 3.9%; /* Dark text for accent */
@@ -76,7 +76,7 @@
 
     --border: 240 5% 20%; /* Subtle Border */
     --input: 240 5% 16%; /* Input background */
-    --ring: 0 0% 90%; /* Ring color (using a light accent shade) */
+    --ring: 270 60% 65%; /* Ring color (using a light accent shade) */
 
     --chart-1: 210 15% 70%; /* Desaturated light blue/grey for charts */
     --chart-2: 210 15% 60%;
@@ -85,13 +85,13 @@
     --chart-5: 210 15% 30%;
 
     --sidebar-background: 240 6% 8%; /* Even Darker Grey for sidebar */
-    --sidebar-foreground: 240 5% 80%;
-    --sidebar-primary: 0 0% 98%; /* Sidebar primary can be the light accent */
-    --sidebar-primary-foreground: 240 10% 3.9%; /* Dark text on sidebar primary */
+    --sidebar-foreground: 0 0% 80%;
+    --sidebar-primary: 270 60% 65%; /* Sidebar primary can be the purple */
+    --sidebar-primary-foreground: 0 0% 98%; /* White text on sidebar primary */
     --sidebar-accent: 240 6% 15%; /* Dark accent for sidebar interactive elements */
-    --sidebar-accent-foreground: 240 5% 90%;
+    --sidebar-accent-foreground: 0 0% 90%;
     --sidebar-border: 240 6% 18%;
-    --sidebar-ring: 0 0% 90%;
+    --sidebar-ring: 270 60% 75%;
   }
 }
 
