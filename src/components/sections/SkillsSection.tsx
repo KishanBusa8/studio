@@ -41,7 +41,7 @@ export default function SkillsSection() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Skills & Technologies</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {skillsData.map((skill) => (
-            <Card key={skill.id} className="text-center shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1">
+            <Card key={skill.id} className="text-center shadow-md hover:shadow-xl hover:scale-105 transform hover:-translate-y-1.5 transition-all duration-300 ease-in-out">
               <CardHeader className="pb-2">
                 <div className="mx-auto mb-3 text-primary">
                    <SkillIcon icon={skill.icon} className="w-10 h-10 mx-auto" />
