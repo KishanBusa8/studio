@@ -59,7 +59,7 @@
     --popover: 240 6% 10%; 
     --popover-foreground: 0 0% 95%;
 
-    --primary: 270 60% 65%; /* Vibrant Purple */
+    --primary: 260 50% 35%; /* Dark Purple */
     --primary-foreground: 0 0% 98%; /* White text for high contrast on purple */
 
     --secondary: 240 5% 20%; /* Darker Grey for secondary elements */
@@ -76,7 +76,7 @@
 
     --border: 240 5% 20%; /* Subtle Border */
     --input: 240 5% 16%; /* Input background */
-    --ring: 270 60% 65%; /* Ring color (using a light accent shade) */
+    --ring: 260 50% 35%; /* Ring color (using new dark purple primary) */
 
     --chart-1: 210 15% 70%; /* Desaturated light blue/grey for charts */
     --chart-2: 210 15% 60%;
@@ -86,12 +86,12 @@
 
     --sidebar-background: 240 6% 8%; /* Even Darker Grey for sidebar */
     --sidebar-foreground: 0 0% 80%;
-    --sidebar-primary: 270 60% 65%; /* Sidebar primary can be the purple */
+    --sidebar-primary: 260 50% 35%; /* Sidebar primary new dark purple */
     --sidebar-primary-foreground: 0 0% 98%; /* White text on sidebar primary */
     --sidebar-accent: 240 6% 15%; /* Dark accent for sidebar interactive elements */
     --sidebar-accent-foreground: 0 0% 90%;
     --sidebar-border: 240 6% 18%;
-    --sidebar-ring: 270 60% 75%;
+    --sidebar-ring: 260 50% 45%; /* Lighter shade of new dark purple for sidebar ring */
   }
 }
 
