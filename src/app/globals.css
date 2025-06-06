@@ -50,48 +50,48 @@
   }
 
   .dark {
-    --background: 240 6% 10%; /* Very Dark Grey/Almost Black */
-    --foreground: 0 0% 95%; /* Light Grey/Off-white */
+    --background: 217 19% 16%; /* #222831 */
+    --foreground: 37 39% 80%; /* #DFD0B8 */
 
-    --card: 240 6% 12%; /* Slightly Lighter Dark Grey for cards */
-    --card-foreground: 0 0% 95%;
+    --card: 217 11% 25%; /* #393E46 */
+    --card-foreground: 37 39% 80%; /* #DFD0B8 */
 
-    --popover: 240 6% 10%; 
-    --popover-foreground: 0 0% 95%;
+    --popover: 217 11% 25%; /* #393E46 */
+    --popover-foreground: 37 39% 80%; /* #DFD0B8 */
 
-    --primary: 260 50% 35%; /* Dark Purple */
-    --primary-foreground: 0 0% 98%; /* White text for high contrast on purple */
+    --primary: 38 11% 56%; /* #948979 */
+    --primary-foreground: 217 19% 16%; /* #222831 - Dark text for contrast on primary */
 
-    --secondary: 240 5% 20%; /* Darker Grey for secondary elements */
-    --secondary-foreground: 0 0% 85%; /* Lighter grey text for secondary */
+    --secondary: 217 11% 25%; /* #393E46 */
+    --secondary-foreground: 37 39% 80%; /* #DFD0B8 */
 
-    --muted: 240 5% 18%; /* Muted Grey */
-    --muted-foreground: 0 0% 60%; /* Muted text */
+    --muted: 217 11% 22%; /* Slightly darker variant of #393E46 */
+    --muted-foreground: 38 11% 56%; /* #948979 - Muted text */
 
-    --accent: 0 0% 98%; /* Off-white for accent */
-    --accent-foreground: 240 10% 3.9%; /* Dark text for accent */
+    --accent: 37 39% 80%; /* #DFD0B8 - Using the light beige as accent */
+    --accent-foreground: 217 19% 16%; /* #222831 - Dark text for accent */
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%; /* Keeping a standard dark red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
 
-    --border: 240 5% 20%; /* Subtle Border */
-    --input: 240 5% 16%; /* Input background */
-    --ring: 260 50% 35%; /* Ring color (using new dark purple primary) */
+    --border: 217 11% 28%; /* A shade between background and card for borders */
+    --input: 217 11% 25%; /* #393E46 */
+    --ring: 38 11% 56%; /* #948979 - Primary color for ring */
 
-    --chart-1: 210 15% 70%; /* Desaturated light blue/grey for charts */
+    --chart-1: 210 15% 70%; 
     --chart-2: 210 15% 60%;
     --chart-3: 210 15% 50%;
     --chart-4: 210 15% 40%;
     --chart-5: 210 15% 30%;
 
-    --sidebar-background: 240 6% 8%; /* Even Darker Grey for sidebar */
-    --sidebar-foreground: 0 0% 80%;
-    --sidebar-primary: 260 50% 35%; /* Sidebar primary new dark purple */
-    --sidebar-primary-foreground: 0 0% 98%; /* White text on sidebar primary */
-    --sidebar-accent: 240 6% 15%; /* Dark accent for sidebar interactive elements */
-    --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 240 6% 18%;
-    --sidebar-ring: 260 50% 45%; /* Lighter shade of new dark purple for sidebar ring */
+    --sidebar-background: 217 19% 16%; /* #222831 */
+    --sidebar-foreground: 37 39% 80%; /* #DFD0B8 */
+    --sidebar-primary: 38 11% 56%; /* #948979 */
+    --sidebar-primary-foreground: 217 19% 16%; /* #222831 */
+    --sidebar-accent: 217 11% 25%; /* #393E46 */
+    --sidebar-accent-foreground: 37 39% 80%; /* #DFD0B8 */
+    --sidebar-border: 217 11% 28%;
+    --sidebar-ring: 38 11% 56%; /* #948979 */
   }
 }
 
