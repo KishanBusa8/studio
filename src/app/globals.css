@@ -50,48 +50,48 @@
   }
 
   .dark {
-    --background: 220 20% 10%;
-    --foreground: 220 10% 95%;
+    --background: 222 30% 11%; /* Deep Indigo */
+    --foreground: 210 40% 96%; /* Light Cool Gray */
 
-    --card: 220 15% 15%;
-    --card-foreground: 220 10% 95%;
+    --card: 222 30% 15%; /* Slightly Lighter Indigo */
+    --card-foreground: 210 40% 96%;
 
-    --popover: 220 15% 12%;
-    --popover-foreground: 220 10% 95%;
+    --popover: 222 30% 13%;
+    --popover-foreground: 210 40% 96%;
 
-    --primary: 210 100% 56%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 200 90% 55%; /* Bright Cyan-Blue */
+    --primary-foreground: 222 30% 10%; /* Very Dark Indigo for high contrast on primary */
 
-    --secondary: 220 10% 25%;
-    --secondary-foreground: 220 10% 85%;
+    --secondary: 222 25% 22%; /* Muted Indigo */
+    --secondary-foreground: 210 30% 80%;
 
-    --muted: 220 10% 20%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 222 20% 18%;
+    --muted-foreground: 210 25% 65%;
 
-    --accent: 300 80% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 330 85% 60%; /* Vibrant Pink */
+    --accent-foreground: 0 0% 100%; /* White */
 
-    --destructive: 0 80% 60%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 30%;
-    --input: 220 10% 22%;
-    --ring: 210 100% 56%;
+    --border: 222 25% 25%;
+    --input: 222 25% 20%;
+    --ring: 200 90% 55%; /* Match primary */
 
-    --chart-1: 210 90% 50%;
-    --chart-2: 170 80% 45%;
-    --chart-3: 300 70% 55%;
-    --chart-4: 250 85% 60%;
-    --chart-5: 30 95% 55%;
+    --chart-1: 200 80% 50%;
+    --chart-2: 170 70% 45%;
+    --chart-3: 330 75% 55%;
+    --chart-4: 250 75% 60%;
+    --chart-5: 30 85% 55%;
 
-    --sidebar-background: 220 15% 12%;
-    --sidebar-foreground: 220 10% 80%;
-    --sidebar-primary: 210 100% 65%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 10% 20%;
-    --sidebar-accent-foreground: 220 10% 90%;
-    --sidebar-border: 220 10% 25%;
-    --sidebar-ring: 210 100% 56%;
+    --sidebar-background: 222 30% 9%; /* Even Darker Indigo */
+    --sidebar-foreground: 210 35% 85%;
+    --sidebar-primary: 200 90% 60%; /* Slightly brighter for sidebar emphasis */
+    --sidebar-primary-foreground: 222 30% 10%;
+    --sidebar-accent: 222 25% 18%;
+    --sidebar-accent-foreground: 210 35% 90%;
+    --sidebar-border: 222 25% 22%;
+    --sidebar-ring: 200 90% 60%;
   }
 }
 
