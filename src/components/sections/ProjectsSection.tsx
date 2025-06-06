@@ -39,12 +39,12 @@ const projectsData: Project[] = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-16 md:py-24 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+    <section id="projects" className="py-16 md:py-24 animate-section-slide-up" style={{ animationDelay: '0.2s' }}>
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">My Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project) => (
-            <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300 ease-in-out">
+            <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:scale-[1.04] hover:-translate-y-2 transform transition-all duration-300 ease-out">
               <div className="relative w-full h-48">
                 <Image
                   src={project.imageUrl}
