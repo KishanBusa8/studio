@@ -93,4 +93,26 @@ export const projectsData: Project[] = [
         {id: '1', name: 'Inside App', url: 'https://apps.apple.com/in/app/inside-mindfulness-meditation/id6451197789'},
     ]
   },
+  {
+    id: 'recipts-returns',
+    title: 'Receipts and Returns',
+    description: 'Lead Full Stack Developer',
+    longDescription: '• Paperless Receipt Transaction\n• Easy Returns (Paperless)\n• Store wise Receipt Management\n• As per rules last possible return dates (Approx)\n• Can access whole invoice or Receipts on mobile as submitted Images\n• Unlimited Bar Code scan and store facility\n• Share receipts with partner/family for easy Receipts or Returns management.\n• Create a Common daily shopping list and get real-time status and add and edit facility.\n• Easy Search Option available, no need to go through all receipts.\n• Can do price comparisons for the same product at different stores.',
+    technologies: ['Flutter', 'Dart','Flutter Web', 'Firebase', 'Firestore', 'Firebase Cloud Functions', 'Firebase Realtime Database'],
+    imageUrl: '/receipt_logo.png',
+    imageHint: 'AI vision interface',
+    gallery: [
+        { url: '/receipt_1.webp', hint: 'App' },
+        { url: '/receipt_2.webp', hint: 'App' },
+        { url: '/receipt_3.webp', hint: 'App' },
+        { url: '/receipt_4.webp', hint: 'App' },
+        { url: '/receipt_5.webp', hint: 'App' },
+
+    ],
+    links: [
+        {id: '1', name: 'Mobile App', url: 'https://play.google.com/store/apps/details?id=com.rrr.app&hl=en-IN'},
+        {id: '2', name: 'Web App', url: 'https://rrr-app.com/'},
+
+    ]
+  },
 ];
