@@ -1,5 +1,10 @@
 import type { LucideIcon } from 'lucide-react';
 
+export interface ProjectImage {
+  url: string;
+  hint: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -8,7 +13,7 @@ export interface Project {
   technologies: string[];
   imageUrl: string;
   imageHint: string;
-  gallery?: { url: string; hint: string }[];
+  gallery?: ProjectImage[];
   liveLink?: string;
   githubLink?: string;
 }
