@@ -2,27 +2,12 @@ import type { Project } from '@/types';
 
 
 export const projectsData: Project[] = [
-  {
-    id: 'portpro-driver-app',
-    title: 'PortPro Driver App',
-    description: 'Spearheaded the development and enhancement of the Portpro Driver Mobile App, ensuring seamless user experience and high performance across multiple devices.',
-    longDescription: 'As the lead Flutter developer at PortPro, I spearheaded the development of the driver mobile app, ensuring a high-quality user experience and optimal performance. My role involved designing and implementing robust backend services, APIs, and microservices to support core business operations. I also participated in code reviews, maintained coding standards, and provided technical support for frontend issues, contributing to the continuous improvement of our software.',
-    technologies: ['Flutter', 'Node.js', 'Nest.JS', 'Google Maps API', 'PostgreSQL', 'Microservices'],
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'truck logistics app',
-    gallery: [
-        { url: 'https://placehold.co/800x600.png', hint: 'app dashboard' },
-        { url: 'https://placehold.co/800x600.png', hint: 'live map tracking' }
-    ],
-    links: [
-        {id: '1', name: 'Company', url: 'https://www.portpro.io/'},
-    ]
-  },
+  
   {
     id: 'doctor-garage',
     title: 'Doctor Garage',
-    description: 'Led the development of the Doctor Garage User and Mechanic Mobile Apps, Backend Service and Admin Panel, ensuring seamless user experience and high performance.',
-    longDescription: 'At InFicial Infotech, I served as a technical lead for the Doctor Garage project, a platform connecting bike owners with mechanics. I led the development of both the user and mechanic mobile apps in Flutter, as well as the backend services and admin panel using Node.js and Next.js. My responsibilities included architecting scalable solutions, managing the project with agile methodologies, and mentoring team members to ensure the timely delivery of a high-quality, comprehensive bike servicing platform.',
+    description: 'Spearheaded the development and enhancement of the Doctor Garage User and Mechanic Mobile Apps, Backend Service and Admin Panle, ensuring seamless user experience and high performance across multiple devices while building supporting backend services.',
+    longDescription: 'Doctor Garage is a platform connecting bike owners with skilled mechanics for doorstep services. Users can book services, choose specific issues, and add spares for their bikes. Mechanics can accept or reject bookings, update service status, and manage spare parts. Both receive email and push notifications for updates. Mechanics can track earnings and withdraw payments. The platform ensures a seamless experience for both users and mechanics, offering flexibility, transparency, and convenience in bike servicing.',
     technologies: ['Flutter', 'Node.js', 'Nest.JS', 'Next.JS', 'Google Maps API', 'Mongo DB', 'Email Services'],
     imageUrl: '/dg_logo.png',
     imageHint: 'logistics app interface',
@@ -42,15 +27,14 @@ export const projectsData: Project[] = [
         
     ],
     links: [
-        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8'},
-        {id: '2', name: 'Company', url: 'https://www.inficial.com/'},
+       
     ]
   },
    {
     id: 'ecom-telco',
     title: 'Ecomtelco',
-    description: 'Lead Flutter Developer for this e-commerce mobile application, handling all mobile app projects.',
-    longDescription: 'During my time at WebOccult Technologies, I was the primary mobile app developer, responsible for all mobile projects. I worked extensively with Flutter and agile methodologies, gathering requirements directly from clients to deliver robust applications. EcomTelco was one such key project, designed to bridge the gap between manufacturers and clients with a seamless e-commerce experience.',
+    description: 'Lead Flutter Developer in this ecommorce mobile applications',
+    longDescription: 'EcomTelco bridges the gap between manufacturers and clients, ensuring a seamless, reliable, and efficient procurement process. Simplify your business operations and elevate your project execution with EcomTelco today!',
     technologies: ['Flutter', 'Dart', 'REST APIs',],
     imageUrl: '/ecom_logo.png',
     imageHint: 'team collaboration meeting',
@@ -66,8 +50,9 @@ export const projectsData: Project[] = [
       { url: '/ecom_9.jpeg', hint: 'Mobile App' },
     ],
     links: [
-        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8'},
-        {id: '2', name: 'Company', url: 'https://www.weboccult.com/'},
+        {id: '1', name: 'User App', url: 'https://play.google.com/store/apps/details?id=com.ecomtelco.app'},
+        {id: '2', name: 'Vendor App', url: 'https://play.google.com/store/apps/details?id=com.ecomtelco.app.vendor'},
+        {id: '3', name: 'Admin App', url: 'https://play.google.com/store/apps/details?id=com.ecomtelco.app.admin'},
     ]
   },
   {
