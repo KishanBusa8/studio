@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
@@ -9,7 +10,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-8 h-32 w-32 md:h-40 md:w-40 rounded-full overflow-hidden shadow-lg border-4 border-primary animate-profile-ping group">
           <Image
-            src="/profile.png"
+            src="/profile.jpeg"
             alt="Profile Picture"
             width={200}
             height={200}
@@ -24,7 +25,7 @@ export default function HeroSection() {
           FULLSTACK MOBILE APP DEVELOPER
         </p>
         <div className="max-w-4xl mx-auto text-lg text-left text-foreground/80 mb-10 space-y-6">
-          <p>
+           <p>
             I am a highly skilled and results-driven FullStack Developer with over 6 years of experience in mobile application development using Flutter and React Native, and 2 years of expertise in backend and frontend development with Node.js, Nest.js, and React.js. My passion lies in creating robust, scalable solutions and ensuring seamless user experiences across mobile and web platforms.
           </p>
           <p>
