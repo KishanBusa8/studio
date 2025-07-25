@@ -83,7 +83,15 @@ export default function ProjectDetailsClient({ project }: ProjectDetailsClientPr
               
               <div className="prose prose-lg dark:prose-invert max-w-none text-foreground/90 space-y-6">
                 <p className="text-xl leading-relaxed text-muted-foreground">{project.description}</p>
-                {project.longDescription && <p>{project.longDescription}</p>}
+                {project.longDescription && (
+                  project.longDescription.split('\n').map((paragraph, index) => (
+                    // Use a key for each paragraph if there are multiple
+                    // React requires keys for elements in a list
+                    // Also, handle empty strings which might result from consecutive newlines
+                    paragraph.trim() !== '' && <p key={index}>{paragraph}</p>
+                  ))
+                )}
+
               </div>
 
               <div className="flex flex-wrap items-center gap-4 mt-12">
