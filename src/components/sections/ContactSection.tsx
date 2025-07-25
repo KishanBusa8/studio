@@ -1,12 +1,12 @@
 import { Button } from '@/components/ui/button';
 import type { SocialLink } from '@/types';
-import { Github, Linkedin, Layers, Download, Mail } from 'lucide-react';
+import { Github, Linkedin, Layers, Download, Mail, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 const socialLinks: SocialLink[] = [
-  { id: '1', name: 'GitHub', url: 'https://github.com/yourusername', icon: Github },
-  { id: '2', name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: Linkedin },
-  { id: '3', name: 'Stack Overflow', url: 'https://stackoverflow.com/users/youruserid/yourusername', icon: Layers },
+  { id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8', icon: Github },
+  { id: '2', name: 'LinkedIn', url: 'https://linkedin.com/in/kishanbusa', icon: Linkedin },
+  { id: '3', name: 'Stack Overflow', url: 'https://stackoverflow.com/users/10936691/kishan-busa', icon: Layers },
 ];
 
 export default function ContactSection() {
@@ -20,12 +20,12 @@ export default function ContactSection() {
         
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
           <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            <Link href="mailto:youremail@example.com">
+            <Link href="mailto:kishanbusa08@gmail.com">
               <Mail className="mr-2 h-5 w-5" /> Email Me
             </Link>
           </Button>
-          <Button variant="outline" size="lg" asChild className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-            <a href="/resume.pdf" download="AlexJohnson_Resume.pdf">
+          <Button variant="outline" size="lg" asChild className="border-accent text-accent hover:bg-accent hover:text-neutral-900">
+            <a href="https://docs.google.com/document/d/1oMQHBmcNEqSrsgWpaPHEkgL58YjGqBtQnsrLfBtlFgc/export?format=pdf" download="KishanBusa_Resume.pdf" target="_blank" rel="noopener noreferrer">
               <Download className="mr-2 h-5 w-5" /> Download Resume
             </a>
           </Button>

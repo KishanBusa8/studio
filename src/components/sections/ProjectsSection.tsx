@@ -9,31 +9,30 @@ import Link from 'next/link';
 const projectsData: Project[] = [
   {
     id: '1',
-    title: 'EcoInsight Dashboard',
-    description: 'A comprehensive platform for visualizing environmental data, helping organizations make sustainable decisions. Features real-time analytics and customizable reports.',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'D3.js'],
+    title: 'Portpro Driver Mobile App',
+    description: 'Spearheaded the development and enhancement of the Portpro Driver Mobile App, ensuring seamless user experience and high performance across multiple devices while building supporting backend services.',
+    technologies: ['Flutter', 'Node.js', 'Microservices', 'API Design'],
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'dashboard data',
-    liveLink: '#',
-    githubLink: '#',
+    imageHint: 'logistics app',
+    githubLink: 'https://github.com/KishanBusa8',
   },
   {
     id: '2',
-    title: 'Mobile Fitness Companion',
-    description: 'A cross-platform mobile app that tracks workouts, offers personalized training plans, and connects users with a fitness community.',
-    technologies: ['React Native', 'Firebase', 'GraphQL'],
+    title: 'Technical Lead at InFicial Infotech',
+    description: 'Led Flutter development teams, architected scalable solutions, and oversaw the implementation of robust database architectures and secure REST APIs using Node.js and Express.',
+    technologies: ['Flutter', 'Dart', 'Node.js', 'Express.js', 'REST APIs'],
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'fitness app',
-    liveLink: '#',
+    imageHint: 'team collaboration',
+    githubLink: 'https://github.com/KishanBusa8',
   },
   {
     id: '3',
-    title: 'AI-Powered Code Reviewer',
-    description: 'A tool that leverages machine learning to provide automated code reviews, identifying potential bugs and suggesting improvements for code quality.',
-    technologies: ['Python', 'Flask', 'Docker', 'TensorFlow'],
+    title: 'AI-Integrated Mobile Applications',
+    description: 'Collaborated with the AI team to integrate capabilities like OCR, object detection, and face recognition into mobile apps using Flutter and Unity, leveraging OpenCV.',
+    technologies: ['Flutter', 'Unity', 'OpenCV', 'AI/ML'],
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'code editor',
-    githubLink: '#',
+    imageHint: 'AI vision',
+    githubLink: 'https://github.com/KishanBusa8',
   },
 ];
 
@@ -41,7 +40,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-16 md:py-24 animate-section-slide-up" style={{ animationDelay: '0.2s' }}>
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">My Projects</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">My Experience</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project) => (
             <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:scale-[1.04] hover:-translate-y-2 transform transition-all duration-300 ease-out">

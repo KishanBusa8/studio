@@ -14,19 +14,19 @@ export default function HeroSection() {
             width={200}
             height={200}
             className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300 ease-out"
-            data-ai-hint="professional portrait"
+            data-ai-hint="professional portrait Kishan Busa"
           />
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Alex Johnson
+          Kishan Busa
         </h1>
         <p className="text-xl md:text-2xl text-primary/80 mb-6 font-headline">
-          Expert Software Developer
+          FULLSTACK MOBILE APP DEVELOPER
         </p>
-        <p className="max-w-2xl mx-auto text-lg text-foreground/80 mb-10">
-          Passionate about crafting elegant and efficient solutions to complex problems. With over 10 years of experience in full-stack development, I thrive on building innovative applications that make a difference.
+        <p className="max-w-3xl mx-auto text-lg text-foreground/80 mb-10">
+          I am a highly skilled and results-driven Full-Stack Developer with over 6 years of experience in mobile application development using Flutter and React Native, and 2 years of expertise in backend and frontend development with Node.js, Nest.js, and React.js. My passion lies in creating robust, scalable solutions and ensuring seamless user experiences across mobile and web platforms.
         </p>
-        <Button variant="outline" size="lg" asChild className="border-accent text-accent hover:bg-accent hover:text-accent-foreground group">
+        <Button variant="outline" size="lg" asChild className="border-accent text-accent hover:bg-accent hover:text-neutral-900 group">
           <Link href="#projects">
             View My Work <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform duration-200" />
           </Link>

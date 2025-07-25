@@ -1,22 +1,23 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import type { Skill } from '@/types';
-import { Code2, Server, Palette, Database, GitBranch, Smartphone, Brain, Settings, Cloud } from 'lucide-react';
+import { Code2, Server, Palette, Database, GitBranch, Smartphone, Brain, Settings, Cloud, TestTube2, Workflow, Star } from 'lucide-react';
 
 const skillsData: Skill[] = [
-  { id: '1', name: 'JavaScript (ES6+)', icon: Code2, level: 'Expert' },
-  { id: '2', name: 'TypeScript', icon: Code2, level: 'Expert' },
-  { id: '3', name: 'React & Next.js', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94"></path><path d="M9.69 8h11.48"></path><path d="M7.38 12l5.74-9.94"></path><path d="M9.69 16L3.95 6.06"></path><path d="M14.31 16H2.83"></path><path d="M16.62 12l-5.74 9.94"></path></svg>, level: 'Expert' },
-  { id: '4', name: 'Node.js & Express', icon: Server, level: 'Expert' },
-  { id: '5', name: 'Python & Django/Flask', icon: Code2, level: 'Proficient' },
-  { id: '6', name: 'HTML5 & CSS3', icon: Palette, level: 'Expert' },
-  { id: '7', name: 'SQL & NoSQL Databases', icon: Database, level: 'Proficient' },
-  { id: '8', name: 'Git & GitHub', icon: GitBranch, level: 'Expert' },
-  { id: '9', name: 'Responsive Design', icon: Smartphone, level: 'Expert' },
-  { id: '10', name: 'RESTful APIs & GraphQL', icon: Settings, level: 'Proficient' },
-  { id: '11', name: 'Cloud Platforms (AWS/GCP)', icon: Cloud, level: 'Intermediate' },
-  { id: '12', name: 'Agile Methodologies', icon: Brain, level: 'Expert' },
+  { id: '1', name: 'JavaScript', icon: Code2, level: 'Advanced' },
+  { id: '2', name: 'TypeScript', icon: Code2, level: 'Advanced' },
+  { id: '3', name: 'Dart', icon: Star, level: 'Expert' },
+  { id: '4', name: 'React.js / Next.js', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94"></path><path d="M9.69 8h11.48"></path><path d="M7.38 12l5.74-9.94"></path><path d="M9.69 16L3.95 6.06"></path><path d="M14.31 16H2.83"></path><path d="M16.62 12l-5.74 9.94"></path></svg>, level: 'Proficient' },
+  { id: '5', name: 'Node.js / Nest.js', icon: Server, level: 'Proficient' },
+  { id: '6', name: 'Flutter / React Native', icon: Smartphone, level: 'Expert' },
+  { id: '7', name: 'Kotlin', icon: Code2, level: 'Proficient' },
+  { id: '8', name: 'Firebase Services', icon: Cloud, level: 'Advanced' },
+  { id: '9', name: 'Databases (SQL/NoSQL)', icon: Database, level: 'Proficient' },
+  { id: '10', name: 'State Management', icon: Workflow, level: 'Expert' },
+  { id: '11', name: 'Agile & Scrum', icon: Brain, level: 'Proficient' },
+  { id: '12', name: 'Unit Testing', icon: TestTube2, level: 'Proficient' },
 ];
+
 
 // A helper component to render icons
 const SkillIcon = ({ icon: IconComponent, className }: { icon: Skill['icon'], className?: string }) => {
