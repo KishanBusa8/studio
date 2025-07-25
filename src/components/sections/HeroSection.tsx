@@ -26,7 +26,7 @@ export default function HeroSection() {
         <p className="max-w-2xl mx-auto text-lg text-foreground/80 mb-10">
           Passionate about crafting elegant and efficient solutions to complex problems. With over 10 years of experience in full-stack development, I thrive on building innovative applications that make a difference.
         </p>
-        <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground group">
+        <Button variant="outline" size="lg" asChild className="border-accent text-accent hover:bg-accent hover:text-accent-foreground group">
           <Link href="#projects">
             View My Work <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform duration-200" />
           </Link>
