@@ -1,37 +1,28 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import type { Skill } from '@/types';
-import { Code2, Server, Palette, Database, GitBranch, Smartphone, Brain, Settings, Cloud, TestTube2, Workflow, Star } from 'lucide-react';
+import { Code2, Server, Palette, Database, GitBranch, Smartphone, Brain, Settings, Cloud, TestTube2, Workflow, Star, Compass } from 'lucide-react';
 
 const skillsData: Skill[] = [
   { id: '1', name: 'JavaScript', icon: Code2, level: 'Advanced' },
   { id: '2', name: 'TypeScript', icon: Code2, level: 'Advanced' },
-  { id: '3', name: 'Dart', icon: Star, level: 'Expert' },
-  { id: '4', name: 'React.js / Next.js', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94"></path><path d="M9.69 8h11.48"></path><path d="M7.38 12l5.74-9.94"></path><path d="M9.69 16L3.95 6.06"></path><path d="M14.31 16H2.83"></path><path d="M16.62 12l-5.74 9.94"></path></svg>, level: 'Proficient' },
-  { id: '5', name: 'Node.js / Nest.js', icon: Server, level: 'Proficient' },
-  { id: '6', name: 'Flutter / React Native', icon: Smartphone, level: 'Expert' },
-  { id: '7', name: 'Kotlin', icon: Code2, level: 'Proficient' },
-  { id: '8', name: 'Firebase Services', icon: Cloud, level: 'Advanced' },
-  { id: '9', name: 'Databases (SQL/NoSQL)', icon: Database, level: 'Proficient' },
-  { id: '10', name: 'State Management', icon: Workflow, level: 'Expert' },
-  { id: '11', name: 'Agile & Scrum', icon: Brain, level: 'Proficient' },
-  { id: '12', name: 'Unit Testing', icon: TestTube2, level: 'Proficient' },
+  { id: '3', name: 'Flutter / Dart', icon: Smartphone, level: 'Expert' },
+  { id: '4', name: 'React Native', icon: Smartphone, level: 'Proficient' },
+  { id: '5', name: 'React.js / Next.js', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94"></path><path d="M9.69 8h11.48"></path><path d="M7.38 12l5.74-9.94"></path><path d="M9.69 16L3.95 6.06"></path><path d="M14.31 16H2.83"></path><path d="M16.62 12l-5.74 9.94"></path></svg>, level: 'Advanced' },
+  { id: '6', name: 'Node.js / Nest.js', icon: Server, level: 'Expert' },
+  { id: '7', name: 'MongoDB', icon: Compass, level: 'Advanced' },
+  { id: '8', name: 'PostgreSQL', icon: Database, level: 'Advanced' },
+  { id: '9', name: 'Firebase Services', icon: Cloud, level: 'Expert' },
+  { id: '10', name: 'Databases (SQL/NoSQL)', icon: Database, level: 'Proficient' },
+  { id: '11', name: 'State Management', icon: Workflow, level: 'Expert' },
+  { id: '12', name: 'Agile & Scrum', icon: Brain, level: 'Advanced' },
+  { id: '13', name: 'Unit Testing', icon: TestTube2, level: 'Advanced' },
 ];
 
 
 // A helper component to render icons
 const SkillIcon = ({ icon: IconComponent, className }: { icon: Skill['icon'], className?: string }) => {
-  if (typeof IconComponent === 'function') {
-    // Check if it's a LucideIcon or a custom SVG component
-    // Lucide icons typically have a displayName like "LucideIconName"
-    if ('displayName' in IconComponent && (IconComponent as any).displayName?.startsWith('Lucide')) {
-      return <IconComponent className={className} />;
-    }
-    // For custom SVG components passed as functions
-    return <IconComponent className={className} />;
-  }
-  // Fallback or handle other types if necessary
-  return <Code2 className={className} />; // Default icon
+  return <IconComponent className={className} />; // Default icon
 };
 
 
@@ -51,7 +42,7 @@ export default function SkillsSection() {
               </CardHeader>
               {skill.level && (
                 <CardContent className="pt-0">
-                  <Badge variant="outline" className="font-body text-xs text-muted-foreground">{skill.level}</Badge>
+                  <Badge variant="outline" className="font-body text-sm text-muted-foreground">{skill.level}</Badge>
                 </CardContent>
               )}
             </Card>
