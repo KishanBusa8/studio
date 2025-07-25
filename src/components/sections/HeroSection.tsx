@@ -31,15 +31,6 @@ export default function HeroSection() {
           <p>
             With a deep understanding of the entire application lifecycle, I specialize in Use Case Analysis, Functional Specifications, Knowledge Transfer, and Business Analysis. My expertise in MVC and MVVM architecture and state management techniques like Flutter recommends MVVM, Stacked, BLoC, GetX, and Provider patterns, ensuring the development of responsive, high-performance applications.
           </p>
-          <p>
-            In addition to my mobile development expertise, I possess significant experience in backend development, particularly with Node.js and Nest.js. I have designed and implemented scalable, high-performance APIs and microservices, working with databases such as MongoDB, PostgreSQL, and MySQL. My strong understanding of RESTful services, GraphQL, and WebSocket protocols allows me to build robust and efficient backend solutions that integrate seamlessly with frontend and mobile platforms. I am well-versed in modern authentication and authorization techniques, including JWT, OAuth2, and Passport.js, ensuring secure and reliable user management.
-          </p>
-          <p>
-            On the frontend, I have worked extensively with React.js and Next.js, creating dynamic, responsive, and SEO-optimized web applications. My experience includes integrating third-party APIs, state management libraries like Redux and React Context, and leveraging Next.js for server-side rendering and static site generation. I focus on delivering a seamless user experience by optimizing performance, ensuring accessibility, and applying best practices in code quality and maintainability.
-          </p>
-          <p>
-            I also have extensive experience in writing unit test cases to ensure the reliability and maintainability of code across all layers of the application. Whether for frontend components in React, backend APIs in Node.js, or mobile applications in Flutter, I prioritize writing comprehensive and effective tests. Utilizing testing frameworks like Jest, Mocha, Mockito, and Playwright, I strive to deliver high-quality, bug-free solutions that meet the highest standards of performance and stability.
-          </p>
         </div>
         <Button variant="outline" size="lg" asChild className="border-accent text-accent hover:bg-accent hover:text-neutral-900 group">
           <Link href="#projects">
