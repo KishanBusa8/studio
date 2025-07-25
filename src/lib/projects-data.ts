@@ -159,4 +159,24 @@ export const projectsData: Project[] = [
 
     ]
   },
+  {
+    id: 'hire',
+    title: 'Hire E Bikes',
+    description: 'Lead Full Stack Developer',
+    longDescription: '- Hire e-bike is an app for book view nearby stations and it’s all available bikes.- Users can book bikes from the app by purchasing a subscription. (Paytm payment method)- After the bike is booked user can connect to the bike and do an ON and OFF bike via the app.',
+    technologies: ['Flutter', 'Dart', 'Firebase', 'Firestore', 'Firebase Cloud Functions', 'REST APIs'],
+    imageUrl: '/hire_logo.jpeg',
+    imageHint: 'AI vision interface',
+    gallery: [
+        { url: '/hire_1.jpeg', hint: 'App' },
+        { url: '/hire_2.jpeg', hint: 'App' },
+        { url: '/hire_3.jpeg', hint: 'App' },
+        { url: '/hire_4.jpeg', hint: 'App' },
+        { url: '/hire_5.jpeg', hint: 'App' },
+    ],
+    links: [
+
+
+    ]
+  },
 ];
