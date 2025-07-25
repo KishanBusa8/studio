@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, ArrowLeft } from 'lucide-react';
+import { ExternalLink, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { ImageGallery } from '@/components/ui/ImageGallery';
 import type { Project, ProjectImage } from '@/types';
@@ -18,6 +18,7 @@ export default function ProjectDetailsClient({ project }: ProjectDetailsClientPr
   const [selectedIndex, setSelectedIndex] = useState(0);
   
   const galleryImages: ProjectImage[] = project.gallery ?? [];
+  const projectLinks = project.links ?? [];
 
   const openGallery = (index: number) => {
     setSelectedIndex(index);
@@ -76,21 +77,18 @@ export default function ProjectDetailsClient({ project }: ProjectDetailsClientPr
                 {project.longDescription && <p>{project.longDescription}</p>}
               </div>
 
-              <div className="flex items-center space-x-4 mt-12">
-                {project.liveLink && (
-                  <Button asChild size="lg">
-                    <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2" /> Live Demo
-                    </Link>
-                  </Button>
-                )}
-                {project.githubLink && (
-                  <Button asChild variant="outline" size="lg" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-                    <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2" /> View on GitHub
-                    </Link>
-                  </Button>
-                )}
+              <div className="flex flex-wrap items-center gap-4 mt-12">
+                 {projectLinks.map((link) => {
+                  const Icon = link.icon || ExternalLink;
+                  const isPrimary = link.name.toLowerCase() !== 'github' && link.name.toLowerCase() !== 'company';
+                  return (
+                    <Button key={link.id} asChild size="lg" variant={isPrimary ? "default" : "outline"} className={!isPrimary ? 'border-accent text-accent hover:bg-accent hover:text-accent-foreground' : ''}>
+                      <Link href={link.url} target="_blank" rel="noopener noreferrer">
+                        <Icon className="mr-2" /> {link.name}
+                      </Link>
+                    </Button>
+                  );
+                 })}
               </div>
 
             </article>

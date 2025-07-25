@@ -1,11 +1,29 @@
 import type { Project } from '@/types';
+import { Github, ExternalLink, School, Building } from 'lucide-react';
+
 
 export const projectsData: Project[] = [
   {
+    id: 'portpro-driver-app',
+    title: 'PortPro Driver App',
+    description: 'Spearheaded the development and enhancement of the Portpro Driver Mobile App, ensuring seamless user experience and high performance across multiple devices.',
+    longDescription: 'As the lead Flutter developer at PortPro, I spearheaded the development of the driver mobile app, ensuring a high-quality user experience and optimal performance. My role involved designing and implementing robust backend services, APIs, and microservices to support core business operations. I also participated in code reviews, maintained coding standards, and provided technical support for frontend issues, contributing to the continuous improvement of our software.',
+    technologies: ['Flutter', 'Node.js', 'Nest.JS', 'Google Maps API', 'PostgreSQL', 'Microservices'],
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'truck logistics app',
+    gallery: [
+        { url: 'https://placehold.co/800x600.png', hint: 'app dashboard' },
+        { url: 'https://placehold.co/800x600.png', hint: 'live map tracking' }
+    ],
+    links: [
+        {id: '1', name: 'Company', url: 'https://www.portpro.io/', icon: Building},
+    ]
+  },
+  {
     id: 'doctor-garage',
     title: 'Doctor Garage',
-    description: 'Spearheaded the development and enhancement of the Doctor Garage User and Mechanic Mobile Apps, Backend Service and Admin Panle, ensuring seamless user experience and high performance across multiple devices while building supporting backend services.',
-    longDescription: 'Doctor Garage is a platform connecting bike owners with skilled mechanics for doorstep services. Users can book services, choose specific issues, and add spares for their bikes. Mechanics can accept or reject bookings, update service status, and manage spare parts. Both receive email and push notifications for updates. Mechanics can track earnings and withdraw payments. The platform ensures a seamless experience for both users and mechanics, offering flexibility, transparency, and convenience in bike servicing.',
+    description: 'Led the development of the Doctor Garage User and Mechanic Mobile Apps, Backend Service and Admin Panel, ensuring seamless user experience and high performance.',
+    longDescription: 'At InFicial Infotech, I served as a technical lead for the Doctor Garage project, a platform connecting bike owners with mechanics. I led the development of both the user and mechanic mobile apps in Flutter, as well as the backend services and admin panel using Node.js and Next.js. My responsibilities included architecting scalable solutions, managing the project with agile methodologies, and mentoring team members to ensure the timely delivery of a high-quality, comprehensive bike servicing platform.',
     technologies: ['Flutter', 'Node.js', 'Nest.JS', 'Next.JS', 'Google Maps API', 'Mongo DB', 'Email Services'],
     imageUrl: '/dg_logo.png',
     imageHint: 'logistics app interface',
@@ -24,13 +42,16 @@ export const projectsData: Project[] = [
         { url: '/DG_8.jpeg', hint: 'Cart Screeb' },
         
     ],
-    githubLink: 'https://github.com/KishanBusa8',
+    links: [
+        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8', icon: Github},
+        {id: '2', name: 'Company', url: 'https://www.inficial.com/', icon: Building},
+    ]
   },
-  {
+   {
     id: 'ecom-telco',
     title: 'Ecomtelco',
-    description: 'Lead Flutter Developer in this ecommorce mobile applications',
-    longDescription: 'EcomTelco bridges the gap between manufacturers and clients, ensuring a seamless, reliable, and efficient procurement process. Simplify your business operations and elevate your project execution with EcomTelco today!',
+    description: 'Lead Flutter Developer for this e-commerce mobile application, handling all mobile app projects.',
+    longDescription: 'During my time at WebOccult Technologies, I was the primary mobile app developer, responsible for all mobile projects. I worked extensively with Flutter and agile methodologies, gathering requirements directly from clients to deliver robust applications. EcomTelco was one such key project, designed to bridge the gap between manufacturers and clients with a seamless e-commerce experience.',
     technologies: ['Flutter', 'Dart', 'REST APIs',],
     imageUrl: '/ecom_logo.png',
     imageHint: 'team collaboration meeting',
@@ -45,13 +66,16 @@ export const projectsData: Project[] = [
       { url: '/ecom_8.jpeg', hint: 'Mobile App' },
       { url: '/ecom_9.jpeg', hint: 'Mobile App' },
     ],
-    githubLink: 'https://github.com/KishanBusa8',
+    links: [
+        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8', icon: Github},
+        {id: '2', name: 'Company', url: 'https://www.weboccult.com/', icon: Building},
+    ]
   },
   {
     id: 'ai-integrated-apps',
     title: 'AI-Integrated Mobile Applications',
-    description: 'Collaborated with the AI team to integrate capabilities like OCR, object detection, and face recognition into mobile apps using Flutter and Unity, leveraging OpenCV.',
-    longDescription: 'I worked on innovative projects that integrated advanced AI/ML capabilities into mobile applications. This involved collaborating with data scientists and AI engineers to bring features like Optical Character Recognition (OCR) for document scanning, real-time object detection, and facial recognition to life. I developed the mobile interface in Flutter and integrated the AI models, which were often deployed on-device or accessed via APIs. This required a deep understanding of both mobile development and the intricacies of working with machine learning models.',
+    description: 'Collaborated with the AI team to integrate capabilities like OCR, object detection, and face recognition into mobile apps using Flutter and Unity.',
+    longDescription: 'At WebOccult, I also collaborated with the AI team to integrate advanced capabilities like OCR, object detection, and face recognition into mobile apps. Using Unity and Flutter, and leveraging OpenCV, we brought innovative AI features to life, enhancing the functionality and user experience of our mobile applications.',
     technologies: ['Flutter', 'Unity', 'OpenCV', 'AI/ML', 'TensorFlow Lite', 'REST APIs'],
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'AI vision interface',
@@ -60,6 +84,9 @@ export const projectsData: Project[] = [
         { url: 'https://placehold.co/800x600.png', hint: 'object detection overlay' },
         { url: 'https://placehold.co/800x600.png', hint: 'face recognition result' }
     ],
-    githubLink: 'https://github.com/KishanBusa8',
+    links: [
+        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8', icon: Github},
+        {id: '2', name: 'Company', url: 'https://www.weboccult.com/', icon: Building},
+    ]
   },
 ];

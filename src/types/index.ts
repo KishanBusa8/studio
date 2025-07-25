@@ -5,6 +5,13 @@ export interface ProjectImage {
   hint: string;
 }
 
+export interface ProjectLink {
+  id: string;
+  name: string;
+  url: string;
+  icon?: LucideIcon;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -14,8 +21,7 @@ export interface Project {
   imageUrl: string;
   imageHint: string;
   gallery?: ProjectImage[];
-  liveLink?: string;
-  githubLink?: string;
+  links?: ProjectLink[];
 }
 
 export interface Skill {
