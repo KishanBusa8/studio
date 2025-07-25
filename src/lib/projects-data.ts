@@ -61,7 +61,7 @@ export const projectsData: Project[] = [
     description: 'Flutter Developer on .Where2 App',
     longDescription: 'where2 shows you Bali’s hidden gems - matched to your vibe! No more guesswork: we’re travelers too, and built this to help you find places that just feel right. Whether it’s brunch with a view or a beach bar at sunset - we’ve got you.',
     technologies: ['Flutter', 'Dart', 'Firebase', 'Firestore', 'Firebase Cloud Functions', 'REST APIs'],
-    imageUrl: '/where2_6.jpeg',
+    imageUrl: '/where2_logo.webp',
     imageHint: 'AI vision interface',
     gallery: [
         { url: '/where2_1.jpeg', hint: 'App' },
