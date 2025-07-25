@@ -138,4 +138,25 @@ export const projectsData: Project[] = [
 
     ]
   },
+  {
+    id: 'despatchy',
+    title: 'Despatchy',
+    description: 'Lead Full Stack Developer',
+    longDescription: 'A new app has been designed to take the hassle and paperwork out of transport management for businesses. The app, which is free to download on both iOS and Android, allows businesses to track their vehicles in real-time, get ETA updates for deliveries, and even provides a route planner to help avoid traffic jams. This is a huge boon for businesses who rely on transport to move goods around, and it could potentially save them a lot of money in the long run. The app has been designed with ease-of-use in mind, and it only takes a few minutes to set up. So if you’re looking for a way to streamline your logistics, this is definitely worth checking out.\n\nWhat is the app?\nThe app is a complete logistics and transport management app. It enables users to manage their logistics and transport operations from a central location. The app provides users with real-time visibility of their assets, shipments, and deliveries. The app also allows users to track and monitor their fleet vehicles in real time.\n\nWhat can the app do?\nThe app offers a complete logistics and transport management solution that helps companies to optimize their operations, reduce costs and improve customer service. It provides real-time visibility of the entire supply chain, from suppliers to customers, and enables collaboration between all stakeholders. The app also offers a suite of powerful tools to manage inventory, track shipments, and monitor performance.\n\nHow to use the app?\nAssuming you would like content for a “How to Use” section for a logistics and transport management app:\n\nIf you’re in the business of moving people or things from one place to another, then you know that logistics and transportation management is a complex and difficult process. There are a lot of factors to consider, from route planning to vehicle maintenance to customer service. And if you don’t have a good system in place, it can be easy to lose track of everything and make mistakes that can cost you time and money.\n\nThat’s where a good logistics and transport management app can come in handy. With the right app, you can streamline your operations, keep track of all your vehicles and drivers, and provide excellent customer service. In this article, we’ll take a look at some of the best logistics and transport management apps on the market and give you some tips on how to choose the right one for your business.\n\nFirst, let’s take a look at some of the features that a good logistics and transport management app should have:\n\n– GPS tracking: This is one of the most important features for any transportation company. You need to be able to track your vehicles in real-time so that you can see where they are at all times. This way, if there are any delays or problems, you can quickly dispatch another vehicle or driver to get things back on track.\n\n– Vehicle maintenance: Another important feature for transportation companies is vehicle maintenance',
+    technologies: ['Flutter', 'Dart','Node.JS',],
+    imageUrl: '/despatchy_1.jpeg',
+    imageHint: 'AI vision interface',
+    gallery: [
+        { url: '/despatchy_1.jpeg', hint: 'App' },
+        { url: '/despatchy_2.jpeg', hint: 'App' },
+        { url: '/despatchy_3.jpeg', hint: 'App' },
+        { url: '/despatchy_4.jpeg', hint: 'App' },
+        { url: '/despatchy_5.jpeg', hint: 'App' },
+
+    ],
+    links: [
+
+
+    ]
+  },
 ];
