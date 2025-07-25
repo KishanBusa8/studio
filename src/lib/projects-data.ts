@@ -75,4 +75,22 @@ export const projectsData: Project[] = [
         {id: '1', name: '.Where2 App', url: 'https://play.google.com/store/apps/details?id=com.packsinternational.where2app&gl=DE'},
     ]
   },
+  {
+    id: 'inside',
+    title: 'Inside : Mindfulness Meditation',
+    description: 'Lead Flutter Developer',
+    longDescription: 'Find your calm with Inside - your personal meditation and mindfulness app.\n\nWhether you want to reduce anxiety, sleep better, manifest your dreams, or simply take a mindful pause, Inside is here to guide you every step of the way.\n\nInside offers powerful guided meditations for sleep, stress relief, self-love, and emotional healing. Perfect for beginners and experienced meditators alike.',
+    technologies: ['Flutter', 'Dart', 'Audio & Music Software', 'REST APIs'],
+    imageUrl: '/inside_3.jpeg',
+    imageHint: 'AI vision interface',
+    gallery: [
+        { url: '/inside_1.jpeg', hint: 'App' },
+        { url: '/inside_2.jpeg', hint: 'App' },
+        { url: '/inside_3.jpeg', hint: 'App' },
+        { url: '/inside_4.jpeg', hint: 'App' },
+    ],
+    links: [
+        {id: '1', name: 'Inside App', url: 'https://apps.apple.com/in/app/inside-mindfulness-meditation/id6451197789'},
+    ]
+  },
 ];
