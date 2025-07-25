@@ -56,21 +56,23 @@ export const projectsData: Project[] = [
     ]
   },
   {
-    id: 'ai-integrated-apps',
-    title: 'AI-Integrated Mobile Applications',
-    description: 'Collaborated with the AI team to integrate capabilities like OCR, object detection, and face recognition into mobile apps using Flutter and Unity.',
-    longDescription: 'At WebOccult, I also collaborated with the AI team to integrate advanced capabilities like OCR, object detection, and face recognition into mobile apps. Using Unity and Flutter, and leveraging OpenCV, we brought innovative AI features to life, enhancing the functionality and user experience of our mobile applications.',
-    technologies: ['Flutter', 'Unity', 'OpenCV', 'AI/ML', 'TensorFlow Lite', 'REST APIs'],
-    imageUrl: 'https://placehold.co/600x400.png',
+    id: 'where-2',
+    title: '.Where2',
+    description: 'Flutter Developer on .Where2 App',
+    longDescription: 'where2 shows you Bali’s hidden gems - matched to your vibe! No more guesswork: we’re travelers too, and built this to help you find places that just feel right. Whether it’s brunch with a view or a beach bar at sunset - we’ve got you.',
+    technologies: ['Flutter', 'Dart', 'Firebase', 'Firestore', 'Firebase Cloud Functions', 'REST APIs'],
+    imageUrl: '/where2_6.jpeg',
     imageHint: 'AI vision interface',
     gallery: [
-        { url: 'https://placehold.co/800x600.png', hint: 'OCR scanning in app' },
-        { url: 'https://placehold.co/800x600.png', hint: 'object detection overlay' },
-        { url: 'https://placehold.co/800x600.png', hint: 'face recognition result' }
+        { url: '/where2_1.jpeg', hint: 'App' },
+        { url: '/where2_2.jpeg', hint: 'App' },
+        { url: '/where2_3.jpeg', hint: 'App' },
+        { url: '/where2_4.jpeg', hint: 'App' },
+        { url: '/where2_5.jpeg', hint: 'App' },
+        { url: '/where2_6.jpeg', hint: 'App' },
     ],
     links: [
-        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8'},
-        {id: '2', name: 'Company', url: 'https://www.weboccult.com/'},
+        {id: '1', name: '.Where2 App', url: 'https://play.google.com/store/apps/details?id=com.packsinternational.where2app&gl=DE'},
     ]
   },
 ];
