@@ -9,7 +9,6 @@ export interface ProjectLink {
   id: string;
   name: string;
   url: string;
-  icon?: LucideIcon;
 }
 
 export interface Project {

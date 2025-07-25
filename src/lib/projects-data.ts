@@ -1,5 +1,4 @@
 import type { Project } from '@/types';
-import { Github, ExternalLink, School, Building } from 'lucide-react';
 
 
 export const projectsData: Project[] = [
@@ -16,7 +15,7 @@ export const projectsData: Project[] = [
         { url: 'https://placehold.co/800x600.png', hint: 'live map tracking' }
     ],
     links: [
-        {id: '1', name: 'Company', url: 'https://www.portpro.io/', icon: Building},
+        {id: '1', name: 'Company', url: 'https://www.portpro.io/'},
     ]
   },
   {
@@ -43,8 +42,8 @@ export const projectsData: Project[] = [
         
     ],
     links: [
-        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8', icon: Github},
-        {id: '2', name: 'Company', url: 'https://www.inficial.com/', icon: Building},
+        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8'},
+        {id: '2', name: 'Company', url: 'https://www.inficial.com/'},
     ]
   },
    {
@@ -67,8 +66,8 @@ export const projectsData: Project[] = [
       { url: '/ecom_9.jpeg', hint: 'Mobile App' },
     ],
     links: [
-        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8', icon: Github},
-        {id: '2', name: 'Company', url: 'https://www.weboccult.com/', icon: Building},
+        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8'},
+        {id: '2', name: 'Company', url: 'https://www.weboccult.com/'},
     ]
   },
   {
@@ -85,8 +84,8 @@ export const projectsData: Project[] = [
         { url: 'https://placehold.co/800x600.png', hint: 'face recognition result' }
     ],
     links: [
-        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8', icon: Github},
-        {id: '2', name: 'Company', url: 'https://www.weboccult.com/', icon: Building},
+        {id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8'},
+        {id: '2', name: 'Company', url: 'https://www.weboccult.com/'},
     ]
   },
 ];

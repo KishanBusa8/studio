@@ -4,14 +4,23 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, ArrowLeft } from 'lucide-react';
+import { ExternalLink, ArrowLeft, Github, Building } from 'lucide-react';
 import Link from 'next/link';
 import { ImageGallery } from '@/components/ui/ImageGallery';
-import type { Project, ProjectImage } from '@/types';
+import type { Project, ProjectImage, ProjectLink as ProjectLinkType } from '@/types';
 
 type ProjectDetailsClientProps = {
   project: Project;
 };
+
+// Helper to get the icon for a link
+const getLinkIcon = (linkName: string) => {
+  const name = linkName.toLowerCase();
+  if (name === 'github') return Github;
+  if (name === 'company') return Building;
+  return ExternalLink;
+};
+
 
 export default function ProjectDetailsClient({ project }: ProjectDetailsClientProps) {
   const [galleryOpen, setGalleryOpen] = useState(false);
@@ -79,7 +88,7 @@ export default function ProjectDetailsClient({ project }: ProjectDetailsClientPr
 
               <div className="flex flex-wrap items-center gap-4 mt-12">
                  {projectLinks.map((link) => {
-                  const Icon = link.icon || ExternalLink;
+                  const Icon = getLinkIcon(link.name);
                   const isPrimary = link.name.toLowerCase() !== 'github' && link.name.toLowerCase() !== 'company';
                   return (
                     <Button key={link.id} asChild size="lg" variant={isPrimary ? "default" : "outline"} className={!isPrimary ? 'border-accent text-accent hover:bg-accent hover:text-accent-foreground' : ''}>
