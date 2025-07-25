@@ -4,9 +4,11 @@ export interface Project {
   id: string;
   title: string;
   description: string;
+  longDescription?: string;
   technologies: string[];
   imageUrl: string;
   imageHint: string;
+  gallery?: { url: string; hint: string }[];
   liveLink?: string;
   githubLink?: string;
 }
