@@ -36,7 +36,7 @@ export const projectsData: Project[] = [
     description: 'Lead Flutter Developer in this ecommorce mobile applications',
     longDescription: 'EcomTelco bridges the gap between manufacturers and clients, ensuring a seamless, reliable, and efficient procurement process. Simplify your business operations and elevate your project execution with EcomTelco today!',
     technologies: ['Flutter', 'Dart', 'REST APIs',],
-    imageUrl: '/ecom_logo.png',
+    imageUrl: '/ecom_logo.webp',
     imageHint: 'team collaboration meeting',
     gallery: [
       { url: '/ecom_1.jpeg', hint: 'Mobile App' },
