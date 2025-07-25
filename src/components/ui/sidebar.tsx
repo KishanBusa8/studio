@@ -538,7 +538,7 @@ const SidebarMenuButton = React.forwardRef<
       size = "default",
       tooltip,
       className,
-      children, // Added children here to access them directly
+      children,
       ...props
     },
     ref
@@ -546,20 +546,14 @@ const SidebarMenuButton = React.forwardRef<
     const Comp = asChild ? Slot : "button"
     const { isMobile, state } = useSidebar()
 
-    const childElements = React.Children.toArray(children)
-    const iconElement = childElements.find(child => React.isValidElement(child) && (child.type as any).displayName?.includes('Lucide') || (typeof child.type === 'string' && child.type === 'svg'))
-    const textContent = childElements.filter(child => !(React.isValidElement(child) && (child.type as any).displayName?.includes('Lucide') || (typeof child.type === 'string' && child.type === 'svg')))
-
-
     const buttonContent = (
       <>
-        {iconElement}
+        {children}
         <span className={cn(
           "truncate transition-opacity duration-150",
           "group-data-[collapsible=icon]/sidebar:opacity-0 group-data-[collapsible=icon]/sidebar:w-0 group-data-[collapsible=icon]/sidebar:pointer-events-none",
           "group-data-[state=expanded]/sidebar:opacity-100 group-data-[state=expanded]/sidebar:w-auto group-data-[state=expanded]/sidebar:delay-100"
         )}>
-          {textContent}
         </span>
       </>
     );
@@ -573,7 +567,7 @@ const SidebarMenuButton = React.forwardRef<
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
         {...props}
       >
-        {buttonContent}
+        {children}
       </Comp>
     )
 
