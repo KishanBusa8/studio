@@ -3,7 +3,6 @@ import Footer from '@/components/ui/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import SkillsSection from '@/components/sections/SkillsSection';
-import AiSummaryTool from '@/components/sections/AiSummaryTool';
 import ContactSection from '@/components/sections/ContactSection';
 import { Separator } from '@/components/ui/separator';
 
@@ -21,10 +20,6 @@ export default function Home() {
            <Separator className="my-12 md:my-16 bg-border/60" />
         </div>
         <SkillsSection />
-         <div className="container mx-auto px-4">
-           <Separator className="my-12 md:my-16 bg-border/60" />
-        </div>
-        <AiSummaryTool />
          <div className="container mx-auto px-4">
            <Separator className="my-12 md:my-16 bg-border/60" />
         </div>
