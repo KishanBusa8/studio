@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
@@ -47,6 +47,11 @@ export function ImageGallery({
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="bg-black/80 backdrop-blur-sm border-0 w-screen h-screen max-w-none flex items-center justify-center p-0">
+        <DialogTitle className="sr-only">Project Image Gallery</DialogTitle>
+        <DialogDescription className="sr-only">
+          A carousel of images for the project. Use the next and previous buttons to navigate.
+        </DialogDescription>
+
         <div className="relative w-full h-full flex items-center justify-center">
           
           <Button
