@@ -115,4 +115,27 @@ export const projectsData: Project[] = [
 
     ]
   },
+  {
+    id: 'act',
+    title: 'ACT Examps',
+    description: 'Lead Full Stack Developer',
+    longDescription: '- The ACT Exam app is a simple app for Reading and practicing quiz questions.- User can create an offline test for practice.- Dark and light mode.- Offline hive database used for database management.- Admob and In-app purchase integrated.- Getx used for Statemanegement.',
+    technologies: ['Flutter', 'Dart','Flutter Web', 'Hive Local database',],
+    imageUrl: '/act_1.jpeg',
+    imageHint: 'AI vision interface',
+    gallery: [
+        { url: '/act_1.jpeg', hint: 'App' },
+        { url: '/act_2.jpeg', hint: 'App' },
+        { url: '/act_3.jpeg', hint: 'App' },
+        { url: '/act_4.jpeg', hint: 'App' },
+        { url: '/act_5.jpeg', hint: 'App' },
+        { url: '/act_6.jpeg', hint: 'App' },
+        { url: '/act_7.jpeg', hint: 'App' },
+        { url: '/act_8.jpeg', hint: 'App' },
+    ],
+    links: [
+
+
+    ]
+  },
 ];
