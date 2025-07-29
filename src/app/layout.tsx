@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'DevCard - Your Professional Portfolio',
+  title: 'Kishan Busa - Professional Portfolio',
   description: 'Showcasing projects, skills, and experience of an expert software developer.',
 };
 
