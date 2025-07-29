@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -6,18 +8,37 @@ import { ArrowRight, Github } from 'lucide-react';
 import type { Project } from '@/types';
 import Link from 'next/link';
 import { projectsData } from '@/lib/projects-data';
-
+import { motion } from 'framer-motion';
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-16 md:py-24 animate-section-slide-up" style={{ animationDelay: '0.2s' }}>
-      <div className="container mx-auto px-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">My Works</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsData.map((project) => {
-            const githubLink = project.links?.find(link => link.name.toLowerCase() === 'github');
-            return (
-              <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:scale-[1.04] hover:-translate-y-2 transform transition-all duration-300 ease-out">
+    <div className="text-center">
+      <motion.h2 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent spatial-depth-3"
+      >
+        My Works
+      </motion.h2>
+      
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        {projectsData.map((project, index) => {
+          const githubLink = project.links?.find(link => link.name.toLowerCase() === 'github');
+          return (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              whileHover={{ 
+                scale: 1.05, 
+                y: -10,
+                transition: { duration: 0.3 }
+              }}
+              className="spatial-depth-2"
+            >
+              <Card className="flex flex-col overflow-hidden shadow-2xl hover:shadow-primary/20 bg-background/80 backdrop-blur-sm border-primary/20 h-full">
                 <Link href={`/projects/${project.id}`} className="block">
                   <div className="relative w-full h-48">
                     <Image
@@ -55,10 +76,10 @@ export default function ProjectsSection() {
                   )}
                 </CardFooter>
               </Card>
-            );
-          })}
-        </div>
+            </motion.div>
+          );
+        })}
       </div>
-    </section>
+    </div>
   );
-}
+} 

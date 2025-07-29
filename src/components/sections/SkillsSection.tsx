@@ -1,7 +1,10 @@
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import type { Skill } from '@/types';
 import { Code2, Server, Palette, Database, GitBranch, Smartphone, Brain, Settings, Cloud, TestTube2, Workflow, Star, Compass } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const skillsData: Skill[] = [
   { id: '1', name: 'JavaScript', icon: Code2, level: 'Advanced' },
@@ -19,21 +22,38 @@ const skillsData: Skill[] = [
   { id: '13', name: 'Unit Testing', icon: TestTube2, level: 'Advanced' },
 ];
 
-
 // A helper component to render icons
 const SkillIcon = ({ icon: IconComponent, className }: { icon: Skill['icon'], className?: string }) => {
   return <IconComponent className={className} />; // Default icon
 };
 
-
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-16 md:py-24 bg-secondary/30 animate-section-slide-up" style={{ animationDelay: '0.4s' }}>
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Skills & Technologies</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          {skillsData.map((skill) => (
-            <Card key={skill.id} className="text-center shadow-md hover:shadow-xl hover:scale-[1.04] hover:-translate-y-2 transform transition-all duration-300 ease-out">
+    <div className="text-center">
+      <motion.h2 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent spatial-depth-3"
+      >
+        Skills & Technologies
+      </motion.h2>
+      
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+        {skillsData.map((skill, index) => (
+          <motion.div
+            key={skill.id}
+            initial={{ opacity: 0, y: 30, scale: 0.8 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, delay: index * 0.05 }}
+            whileHover={{ 
+              scale: 1.1, 
+              y: -5,
+              transition: { duration: 0.2 }
+            }}
+            className="spatial-depth-1"
+          >
+            <Card className="text-center shadow-2xl hover:shadow-primary/20 bg-background/80 backdrop-blur-sm border-primary/20">
               <CardHeader className="pb-2">
                 <div className="mx-auto mb-3 text-primary">
                    <SkillIcon icon={skill.icon} className="w-10 h-10 mx-auto" />
@@ -46,9 +66,9 @@ export default function SkillsSection() {
                 </CardContent>
               )}
             </Card>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </div>
   );
-}
+} 

@@ -1,16 +1,38 @@
+'use client';
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { educationData } from '@/lib/education-data';
 import { GraduationCap, Calendar } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function EducationSection() {
   return (
-    <section id="education" className="py-16 md:py-24 bg-secondary/30 animate-section-slide-up" style={{ animationDelay: '0.8s' }}>
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Education</h2>
-        <div className="max-w-2xl mx-auto">
-          {educationData.map((edu) => (
-            <Card key={edu.id} className="overflow-hidden shadow-lg hover:shadow-2xl hover:scale-[1.02] transform transition-all duration-300 ease-out">
+    <div className="text-center">
+      <motion.h2 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent spatial-depth-3"
+      >
+        Education
+      </motion.h2>
+      
+      <div className="max-w-2xl mx-auto space-y-6">
+        {educationData.map((edu, index) => (
+          <motion.div
+            key={edu.id}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
+            whileHover={{ 
+              scale: 1.05, 
+              y: -5,
+              transition: { duration: 0.3 }
+            }}
+            className="spatial-depth-2"
+          >
+            <Card className="overflow-hidden shadow-2xl hover:shadow-primary/20 bg-background/80 backdrop-blur-sm border-primary/20">
               <CardContent className="p-6 flex flex-col sm:flex-row items-center gap-6">
                 <div className="flex-shrink-0">
                   <Image
@@ -35,9 +57,9 @@ export default function EducationSection() {
                 </div>
               </CardContent>
             </Card>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </div>
   );
-}
+} 
