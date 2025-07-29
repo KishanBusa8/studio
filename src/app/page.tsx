@@ -19,7 +19,7 @@ export default function Home() {
       <FloatingNavigation />
       
       <main className="relative z-20">
-        <SpatialSection depth={1} delay={0}>
+        <SpatialSection depth={0} delay={0}>
           <HeroSection />
         </SpatialSection>
         
