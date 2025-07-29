@@ -19,29 +19,41 @@ export default function Home() {
       <FloatingNavigation />
       
       <main className="relative z-20">
-        <SpatialSection depth={0} delay={0}>
-          <HeroSection />
-        </SpatialSection>
+        <div className="mb-8 md:mb-12">
+          <SpatialSection depth={0} delay={0}>
+            <HeroSection />
+          </SpatialSection>
+        </div>
         
-        <SpatialSection depth={0.5} delay={1}>
-          <ProjectsSection />
-        </SpatialSection>
+        <div className="mb-8 md:mb-12">
+          <SpatialSection depth={0.5} delay={1}>
+            <ProjectsSection />
+          </SpatialSection>
+        </div>
         
-        <SpatialSection depth={1} delay={2}>
-          <SkillsSection />
-        </SpatialSection>
+        <div className="mb-8 md:mb-12">
+          <SpatialSection depth={1} delay={2}>
+            <SkillsSection />
+          </SpatialSection>
+        </div>
         
-        <SpatialSection depth={1.5} delay={3}>
-          <BlogSection />
-        </SpatialSection>
+        <div className="mb-8 md:mb-12">
+          <SpatialSection depth={1.5} delay={3}>
+            <BlogSection />
+          </SpatialSection>
+        </div>
         
-        <SpatialSection depth={2} delay={4}>
-          <EducationSection />
-        </SpatialSection>
+        <div className="mb-8 md:mb-12">
+          <SpatialSection depth={2} delay={4}>
+            <EducationSection />
+          </SpatialSection>
+        </div>
         
-        <SpatialSection depth={2.5} delay={5}>
-          <ContactSection />
-        </SpatialSection>
+        <div className="mb-8 md:mb-12">
+          <SpatialSection depth={2.5} delay={5}>
+            <ContactSection />
+          </SpatialSection>
+        </div>
       </main>
       
       <div className="relative z-30">

@@ -1,10 +1,25 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function SmoothScroll() {
   const tickingRef = useRef(false);
   const lastScrollY = useRef(0);
+  const [isLowPerformance, setIsLowPerformance] = useState(false);
+  const throttleTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const checkPerformance = () => {
+      const isLowPerf = window.innerWidth < 1024 || 
+                       navigator.hardwareConcurrency < 4 ||
+                       /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsLowPerformance(isLowPerf);
+    };
+    
+    checkPerformance();
+    window.addEventListener('resize', checkPerformance);
+    return () => window.removeEventListener('resize', checkPerformance);
+  }, []);
 
   useEffect(() => {
     // Smooth scroll behavior for anchor links
@@ -33,39 +48,48 @@ export default function SmoothScroll() {
 
     // Optimized scroll behavior for 3D effect
     const handleScroll = () => {
-      if (!tickingRef.current) {
-        requestAnimationFrame(() => {
-          const scrolled = window.pageYOffset;
-          
-          // Only update if scroll position changed significantly
-          if (Math.abs(scrolled - lastScrollY.current) > 5) {
-            // Add parallax effect to background elements
+      if (tickingRef.current) return;
+      
+      const currentScrollY = window.scrollY;
+      const scrollDiff = Math.abs(currentScrollY - lastScrollY.current);
+      
+      // Only update if scroll difference is significant
+      if (scrollDiff < (isLowPerformance ? 3 : 5)) return;
+      
+      tickingRef.current = true;
+      lastScrollY.current = currentScrollY;
+
+      requestAnimationFrame(() => {
+        const scrolled = window.pageYOffset;
+        
+        // Only update if scroll position changed significantly
+        if (Math.abs(scrolled - lastScrollY.current) > 5) {
+          // Add parallax effect to background elements (only on high-performance devices)
+          if (!isLowPerformance) {
             const parallaxElements = document.querySelectorAll('[data-parallax]');
             
             parallaxElements.forEach((element) => {
-              const speed = parseFloat(element.getAttribute('data-parallax') || '0.3');
+              const speed = parseFloat(element.getAttribute('data-parallax') || '0.2');
               const yPos = -(scrolled * speed);
               (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
             });
-            
-            lastScrollY.current = scrolled;
           }
           
-          tickingRef.current = false;
-        });
-        tickingRef.current = true;
-      }
+          lastScrollY.current = scrolled;
+        }
+        
+        tickingRef.current = false;
+      });
     };
 
-    // Throttled scroll listener
-    let scrollTimeout: NodeJS.Timeout;
+    // Throttled scroll listener for better performance
     const throttledScroll = () => {
-      if (scrollTimeout) return;
+      if (throttleTimeoutRef.current) return;
       
-      scrollTimeout = setTimeout(() => {
+      throttleTimeoutRef.current = setTimeout(() => {
         handleScroll();
-        scrollTimeout = null as any;
-      }, 16); // ~60fps
+        throttleTimeoutRef.current = null;
+      }, isLowPerformance ? 32 : 16); // ~30fps on low-performance, ~60fps on high-performance
     };
 
     window.addEventListener('scroll', throttledScroll, { passive: true });
@@ -73,9 +97,11 @@ export default function SmoothScroll() {
     return () => {
       document.removeEventListener('click', handleAnchorClick);
       window.removeEventListener('scroll', throttledScroll);
-      if (scrollTimeout) clearTimeout(scrollTimeout);
+      if (throttleTimeoutRef.current) {
+        clearTimeout(throttleTimeoutRef.current);
+      }
     };
-  }, []);
+  }, [isLowPerformance]);
 
   return null;
 } 

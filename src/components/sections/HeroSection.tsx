@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <div className="text-center relative z-10 mt-16 md:mt-20">
+    <div className="text-center relative z-10 mt-16 md:mt-10">
       <motion.div
         initial={{ opacity: 0, y: 30, scale: 0.95 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -48,7 +48,7 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="max-w-4xl mx-auto text-base md:text-lg text-left text-foreground/90 mb-8 space-y-4 spatial-depth-1"
+        className="max-w-4xl mx-auto text-base md:text-xl text-left text-foreground/90 mb-8 space-y-4 spatial-depth-1"
       >
          <p>
           I am a highly skilled and results-driven FullStack Developer with over 6 years of experience in mobile application development using Flutter and React Native, and 2 years of expertise in backend and frontend development with Node.js, Nest.js, and React.js. My passion lies in creating robust, scalable solutions and ensuring seamless user experiences across mobile and web platforms.

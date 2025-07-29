@@ -18,16 +18,37 @@ const navItems = [
 export default function FloatingNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('profile');
+  const [isLowPerformance, setIsLowPerformance] = useState(false);
   const { scrollYProgress } = useScroll();
   const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const checkPerformance = () => {
+      const isLowPerf = window.innerWidth < 1024 || 
+                       navigator.hardwareConcurrency < 4 ||
+                       /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsLowPerformance(isLowPerf);
+    };
+    
+    checkPerformance();
+    window.addEventListener('resize', checkPerformance);
+    return () => window.removeEventListener('resize', checkPerformance);
+  }, []);
 
   const navOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-  const navY = useTransform(scrollYProgress, [0, 0.1], [-50, 0]);
-  const navScale = useTransform(scrollYProgress, [0, 0.1], [0.9, 1]);
+  const navY = useTransform(scrollYProgress, [0, 0.1], [isLowPerformance ? -20 : -50, 0]);
+  const navScale = useTransform(scrollYProgress, [0, 0.1], [isLowPerformance ? 0.95 : 0.9, 1]);
 
   useEffect(() => {
     const handleScroll = () => {
       if (scrollTimeoutRef.current) return;
+      
+      const currentScrollY = window.scrollY;
+      const scrollDiff = Math.abs(currentScrollY - lastScrollY.current);
+      
+      // Only update if scroll difference is significant
+      if (scrollDiff < (isLowPerformance ? 15 : 25)) return;
       
       scrollTimeoutRef.current = setTimeout(() => {
         const sections = navItems.map(item => item.href.replace('#', ''));
@@ -41,8 +62,9 @@ export default function FloatingNavigation() {
           }
         }
         
+        lastScrollY.current = currentScrollY;
         scrollTimeoutRef.current = undefined;
-      }, 100); // Throttle to 100ms
+      }, isLowPerformance ? 150 : 100); // Less frequent updates on low-performance devices
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -50,7 +72,7 @@ export default function FloatingNavigation() {
       window.removeEventListener('scroll', handleScroll);
       if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     };
-  }, []);
+  }, [isLowPerformance]);
 
   return (
     <>
@@ -72,8 +94,8 @@ export default function FloatingNavigation() {
           {navItems.map((item) => (
             <motion.div
               key={item.href}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              whileHover={{ scale: isLowPerformance ? 1.01 : 1.02 }}
+              whileTap={{ scale: isLowPerformance ? 0.99 : 0.98 }}
             >
               <Button
                 variant="ghost"
@@ -92,7 +114,11 @@ export default function FloatingNavigation() {
                       layoutId="activeTab"
                       className="absolute inset-0 bg-primary/10 rounded-full -z-10"
                       initial={false}
-                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                      transition={{ 
+                        type: "spring", 
+                        stiffness: isLowPerformance ? 200 : 300, 
+                        damping: 25 
+                      }}
                     />
                   )}
                 </Link>

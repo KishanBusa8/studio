@@ -23,7 +23,11 @@ export default function ImmersiveBackground() {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.2, 0.4, 0.2]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
-  const particleCount = isMobile ? 15 : 25;
+  // Optimized star counts for performance
+  const smallStarCount = 100;
+  const mediumStarCount = 100;
+  const largeStarCount = 100;
+  const shootingStarCount = 100;
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -36,23 +40,49 @@ export default function ImmersiveBackground() {
         }}
       />
       
+      {/* Small Twinkling Stars */}
       {isClient && (
         <div className="absolute inset-0">
-          {[...Array(particleCount)].map((_, i) => (
+          {[...Array(smallStarCount)].map((_, i) => (
             <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-primary/20 rounded-full"
+              key={`small-${i}`}
+              className="absolute w-1 h-1 bg-white/40 rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
               }}
               animate={{
-                y: [0, -50, 0],
-                opacity: [0, 0.8, 0],
-                scale: [0, 1, 0],
+                opacity: [0.2, 0.8, 0.2],
+                scale: [0.5, 1, 0.5],
               }}
               transition={{
-                duration: 4 + Math.random() * 3,
+                duration: 2 + Math.random() * 3,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Medium Stars with Pulse */}
+      {isClient && (
+        <div className="absolute inset-0">
+          {[...Array(mediumStarCount)].map((_, i) => (
+            <motion.div
+              key={`medium-${i}`}
+              className="absolute w-1.5 h-1.5 bg-primary/30 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                opacity: [0.3, 0.9, 0.3],
+                scale: [0.8, 1.2, 0.8],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
                 repeat: Infinity,
                 delay: Math.random() * 3,
                 ease: "easeInOut",
@@ -62,28 +92,61 @@ export default function ImmersiveBackground() {
         </div>
       )}
 
-      {isClient && !isMobile && (
-        <div className="absolute inset-0 perspective-1000">
-          {[...Array(3)].map((_, i) => (
+      {/* Large Bright Stars */}
+      {isClient && (
+        <div className="absolute inset-0">
+          {[...Array(largeStarCount)].map((_, i) => (
             <motion.div
-              key={i}
-              className="absolute inset-0 border border-primary/5 rounded-full"
+              key={`large-${i}`}
+              className="absolute w-2 h-2 bg-primary/50 rounded-full"
               style={{
-                transform: `translateZ(${i * 50}px) scale(${1 - i * 0.05})`,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
               }}
               animate={{
-                rotateY: [0, 360],
+                opacity: [0.4, 1, 0.4],
+                scale: [1, 1.5, 1],
               }}
               transition={{
-                duration: 30 + i * 10,
+                duration: 4 + Math.random() * 2,
                 repeat: Infinity,
-                ease: "linear",
+                delay: Math.random() * 4,
+                ease: "easeInOut",
               }}
             />
           ))}
         </div>
       )}
 
+      {/* Shooting Stars */}
+      {isClient && (
+        <div className="absolute inset-0">
+          {[...Array(shootingStarCount)].map((_, i) => (
+            <motion.div
+              key={`shooting-${i}`}
+              className="absolute w-1 h-1 bg-white/60 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                x: [0, isMobile ? 100 : 200],
+                y: [0, isMobile ? -50 : -100],
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0],
+              }}
+              transition={{
+                duration: isMobile ? 3 + Math.random() * 2 : 2 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 8,
+                ease: "easeOut",
+              }}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Background Gradient Overlay */}
       <motion.div
         className="absolute inset-0 bg-gradient-radial from-primary/3 via-transparent to-transparent"
         style={{

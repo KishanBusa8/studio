@@ -17,16 +17,38 @@ export default function SpatialContainer({
   delay = 0 
 }: SpatialContainerProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [isLowPerformance, setIsLowPerformance] = useState(false);
+  
+  useEffect(() => {
+    const checkPerformance = () => {
+      const isLowPerf = window.innerWidth < 1024 || 
+                       navigator.hardwareConcurrency < 4 ||
+                       /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsLowPerformance(isLowPerf);
+    };
+    
+    checkPerformance();
+    window.addEventListener('resize', checkPerformance);
+    return () => window.removeEventListener('resize', checkPerformance);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [50 * depth, -50 * depth]);
+  // Optimized transforms for better performance
+  const y = useTransform(scrollYProgress, [0, 1], [30 * depth, -30 * depth]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9 + depth * 0.05, 1, 0.9 + depth * 0.05]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95 + depth * 0.02, 1, 0.95 + depth * 0.02]);
 
-  const springConfig = { stiffness: 50, damping: 20, restDelta: 0.001 };
+  // Simplified spring config for better performance
+  const springConfig = { 
+    stiffness: isLowPerformance ? 30 : 40, 
+    damping: isLowPerformance ? 15 : 18, 
+    restDelta: 0.001 
+  };
+  
   const springY = useSpring(y, springConfig);
   const springOpacity = useSpring(opacity, springConfig);
   const springScale = useSpring(scale, springConfig);
@@ -36,17 +58,17 @@ export default function SpatialContainer({
       ref={ref}
       className={`relative perspective-1000 ${className}`}
       style={{
-        y: springY,
-        opacity: springOpacity,
-        scale: springScale,
+        y: isLowPerformance ? y : springY,
+        opacity: isLowPerformance ? opacity : springOpacity,
+        scale: isLowPerformance ? scale : springScale,
       }}
-      initial={{ opacity: 0, y: 50 * depth, scale: 0.9 + depth * 0.05 }}
+      initial={{ opacity: 0, y: 30 * depth, scale: 0.95 + depth * 0.02 }}
       whileInView={{ 
         opacity: 1, 
         y: 0, 
         scale: 1,
         transition: { 
-          duration: 0.8, 
+          duration: isLowPerformance ? 0.6 : 0.8, 
           delay: delay * 0.1,
           ease: [0.25, 0.46, 0.45, 0.94]
         }
@@ -67,31 +89,47 @@ export function SpatialSection({
   delay = 0 
 }: SpatialContainerProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [isLowPerformance, setIsLowPerformance] = useState(false);
+  
+  useEffect(() => {
+    const checkPerformance = () => {
+      const isLowPerf = window.innerWidth < 1024 || 
+                       navigator.hardwareConcurrency < 4 ||
+                       /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsLowPerformance(isLowPerf);
+    };
+    
+    checkPerformance();
+    window.addEventListener('resize', checkPerformance);
+    return () => window.removeEventListener('resize', checkPerformance);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100 * depth, -100 * depth]);
+  // Optimized transforms for better performance
+  const y = useTransform(scrollYProgress, [0, 1], [60 * depth, -60 * depth]);
   const opacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.8]);
+  const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.9, 1, 1, 0.9]);
 
   return (
     <motion.section
       ref={ref}
-      className={`min-h-[80vh] flex items-center justify-center relative overflow-hidden ${className}`}
+      className={`min-h-[90vh] md:min-h-[100vh] flex items-center justify-center relative overflow-hidden py-16 md:py-24 ${className}`}
       style={{
-        y,
-        opacity,
-        scale,
+        y: isLowPerformance ? y : y,
+        opacity: isLowPerformance ? opacity : opacity,
+        scale: isLowPerformance ? scale : scale,
       }}
-      initial={{ opacity: 0, y: 150 * depth, scale: 0.8 }}
+      initial={{ opacity: 0, y: 100 * depth, scale: 0.9 }}
       whileInView={{ 
         opacity: 1, 
         y: 0, 
         scale: 1,
         transition: { 
-          duration: 1, 
+          duration: isLowPerformance ? 0.8 : 1, 
           delay: delay * 0.2,
           ease: [0.25, 0.46, 0.45, 0.94]
         }
@@ -104,7 +142,7 @@ export function SpatialSection({
       <div 
         className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-transparent"
         style={{ 
-          transform: `translateZ(${depth * 25}px)`,
+          transform: `translateZ(${depth * 20}px)`,
           filter: `blur(${Math.abs(depth)}px)`
         }}
       />
