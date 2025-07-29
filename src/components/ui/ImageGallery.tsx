@@ -58,7 +58,7 @@ export function ImageGallery({
             variant="ghost"
             size="icon"
             onClick={onClose}
-            className="absolute top-4 right-4 z-50 rounded-full bg-black/50 text-white h-10 w-10 hover:bg-white/20 hover:text-white transition-all duration-300 transform hover:scale-110"
+            className="absolute top-6 right-4 z-50 rounded-full bg-black/50 text-white h-10 w-10 hover:bg-white/20 hover:text-white transition-all duration-300 transform hover:scale-110"
           >
             <X className="h-6 w-6" />
             <span className="sr-only">Close</span>
@@ -70,7 +70,7 @@ export function ImageGallery({
                 variant="ghost"
                 size="icon"
                 onClick={goToPrevious}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-50 h-12 w-12 rounded-full bg-black/30 text-white hover:bg-white/20 hover:text-white transition-all duration-300"
+                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-50 h-12 w-12 rounded-full bg-black/30 text-white hover:bg-white/20 hover:text-white transition-all duration-300"
               >
                 <ChevronLeft className="h-10 w-10" />
                 <span className="sr-only">Previous</span>
@@ -80,7 +80,7 @@ export function ImageGallery({
                 variant="ghost"
                 size="icon"
                 onClick={goToNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-50 h-12 w-12 rounded-full bg-black/30 text-white hover:bg-white/20 hover:text-white transition-all duration-300"
+                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-50 h-12 w-12 rounded-full bg-black/30 text-white hover:bg-white/20 hover:text-white transition-all duration-300"
               >
                 <ChevronRight className="h-10 w-10" />
                 <span className="sr-only">Next</span>
