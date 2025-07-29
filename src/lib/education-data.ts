@@ -5,7 +5,7 @@ export const educationData: Education[] = [
     id: 'gecr',
     institution: 'Government Engineering College, Rajkot (GTU)',
     degree: 'Bachelor of Engineering in Computer Engineering',
-    period: 'August 2015 - May 2019',
+    period: '2015 - 2019',
     logoUrl: '/gecr.png',
     logoHint: 'Government Engineering College, Rajkot Logo',
   },
