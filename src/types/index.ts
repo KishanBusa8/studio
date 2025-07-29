@@ -45,3 +45,12 @@ export interface Blog {
   imageHint: string;
   url: string;
 }
+
+export interface Education {
+  id: string;
+  institution: string;
+  degree: string;
+  period: string;
+  logoUrl: string;
+  logoHint: string;
+}

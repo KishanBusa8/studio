@@ -5,6 +5,7 @@ import ProjectsSection from '@/components/sections/ProjectsSection';
 import SkillsSection from '@/components/sections/SkillsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import BlogSection from '@/components/sections/BlogSection';
+import EducationSection from '@/components/sections/EducationSection';
 import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
@@ -25,6 +26,10 @@ export default function Home() {
            <Separator className="my-12 md:my-16 bg-border/60" />
         </div>
         <BlogSection />
+        <div className="container mx-auto px-4">
+           <Separator className="my-12 md:my-16 bg-border/60" />
+        </div>
+        <EducationSection />
          <div className="container mx-auto px-4">
            <Separator className="my-12 md:my-16 bg-border/60" />
         </div>
