@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import type { SocialLink } from '@/types';
-import { Github, Linkedin, Layers, Download, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Layers, Download, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 const socialLinks: SocialLink[] = [
@@ -24,8 +24,8 @@ export default function ContactSection() {
               <Mail className="mr-2 h-5 w-5" /> Email Me
             </Link>
           </Button>
-          <Button variant="outline" size="lg" asChild className="border-accent text-accent hover:bg-accent hover:text-neutral-900">
-            <a href="https://docs.google.com/document/d/1oMQHBmcNEqSrsgWpaPHEkgL58YjGqBtQnsrLfBtlFgc/export?format=pdf" download="KishanBusa_Resume.pdf" target="_blank" rel="noopener noreferrer">
+          <Button variant="outline" size="lg" asChild className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+            <a href="/resume.pdf" download="Kishan_Busa_Resume.pdf">
               <Download className="mr-2 h-5 w-5" /> Download Resume
             </a>
           </Button>
