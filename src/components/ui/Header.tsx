@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Menu, CodeXml } from 'lucide-react';
 
 const navItems = [
@@ -36,6 +36,9 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
+              </SheetHeader>
               <div className="flex flex-col space-y-4 pt-6">
                 {navItems.map((item) => (
                   <SheetClose key={item.href} asChild>
