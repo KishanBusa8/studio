@@ -19,27 +19,27 @@ export default function Home() {
       <FloatingNavigation />
       
       <main className="relative z-20">
-        <SpatialSection depth={0} delay={0}>
+        <SpatialSection depth={1} delay={0}>
           <HeroSection />
         </SpatialSection>
         
-        <SpatialSection depth={1} delay={1}>
+        <SpatialSection depth={0.5} delay={1}>
           <ProjectsSection />
         </SpatialSection>
         
-        <SpatialSection depth={2} delay={2}>
+        <SpatialSection depth={1} delay={2}>
           <SkillsSection />
         </SpatialSection>
         
-        <SpatialSection depth={3} delay={3}>
+        <SpatialSection depth={1.5} delay={3}>
           <BlogSection />
         </SpatialSection>
         
-        <SpatialSection depth={4} delay={4}>
+        <SpatialSection depth={2} delay={4}>
           <EducationSection />
         </SpatialSection>
         
-        <SpatialSection depth={5} delay={5}>
+        <SpatialSection depth={2.5} delay={5}>
           <ContactSection />
         </SpatialSection>
       </main>

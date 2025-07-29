@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -19,34 +19,44 @@ export default function FloatingNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('profile');
   const { scrollYProgress } = useScroll();
+  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
 
   const navOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-  const navY = useTransform(scrollYProgress, [0, 0.1], [-100, 0]);
-  const navScale = useTransform(scrollYProgress, [0, 0.1], [0.8, 1]);
+  const navY = useTransform(scrollYProgress, [0, 0.1], [-50, 0]);
+  const navScale = useTransform(scrollYProgress, [0, 0.1], [0.9, 1]);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => item.href.replace('#', ''));
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      if (scrollTimeoutRef.current) return;
+      
+      scrollTimeoutRef.current = setTimeout(() => {
+        const sections = navItems.map(item => item.href.replace('#', ''));
+        const scrollPosition = window.scrollY + window.innerHeight / 3;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const element = document.getElementById(sections[i]);
-        if (element && element.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const element = document.getElementById(sections[i]);
+          if (element && element.offsetTop <= scrollPosition) {
+            setActiveSection(sections[i]);
+            break;
+          }
         }
-      }
+        
+        scrollTimeoutRef.current = undefined;
+      }, 100); // Throttle to 100ms
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
   }, []);
 
   return (
     <>
       {/* Desktop Floating Navigation */}
       <motion.nav
-        className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 hidden lg:block"
+        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 hidden lg:block"
         style={{
           opacity: navOpacity,
           y: navY,
@@ -62,14 +72,14 @@ export default function FloatingNavigation() {
           {navItems.map((item) => (
             <motion.div
               key={item.href}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Button
                 variant="ghost"
                 size="sm"
                 asChild
-                className={`relative text-sm font-medium transition-all duration-300 ${
+                className={`relative text-sm font-medium transition-all duration-200 ${
                   activeSection === item.href.replace('#', '')
                     ? 'text-primary bg-primary/10'
                     : 'text-foreground/70 hover:text-primary'
@@ -82,7 +92,7 @@ export default function FloatingNavigation() {
                       layoutId="activeTab"
                       className="absolute inset-0 bg-primary/10 rounded-full -z-10"
                       initial={false}
-                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
                     />
                   )}
                 </Link>
