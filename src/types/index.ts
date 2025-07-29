@@ -36,3 +36,12 @@ export interface SocialLink {
   url: string;
   icon: LucideIcon;
 }
+
+export interface Blog {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageHint: string;
+  url: string;
+}
