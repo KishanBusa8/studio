@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Menu, CodeXml } from 'lucide-react';
 
 const navItems = [
@@ -38,9 +38,11 @@ export default function Header() {
             <SheetContent side="right">
               <div className="flex flex-col space-y-4 pt-6">
                 {navItems.map((item) => (
-                   <Button key={item.href} variant="ghost" asChild className="justify-start text-lg">
-                    <Link href={item.href}>{item.label}</Link>
-                  </Button>
+                  <SheetClose key={item.href} asChild>
+                     <Button variant="ghost" asChild className="justify-start text-lg">
+                      <Link href={item.href}>{item.label}</Link>
+                    </Button>
+                  </SheetClose>
                 ))}
               </div>
             </SheetContent>
