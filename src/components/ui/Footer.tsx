@@ -13,7 +13,8 @@ export default function Footer() {
     <footer className="border-t border-border/40 bg-background/95 py-6">
       <div className="container mx-auto px-4 text-center">
         <p className="text-sm text-muted-foreground">
-          &copy; {year} DevCard. Built with Next.js and Tailwind CSS.
+          &copy; {year} Made with ❤️
+          <br />Built by developer, for developers.
         </p>
       </div>
     </footer>
