@@ -17,7 +17,7 @@ export default function BlogSection() {
         transition={{ duration: 0.8 }}
         className="text-4xl md:text-5xl font-bold mb-16 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent spatial-depth-3"
       >
-        From My Blog
+        My Blogs
       </motion.h2>
       
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
