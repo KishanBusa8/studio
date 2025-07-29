@@ -25,7 +25,7 @@ export default function ContactSection() {
             </Link>
           </Button>
           <Button variant="outline" size="lg" asChild className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-            <a href="/resume.pdf" download="Kishan_Busa_Resume.pdf">
+            <a href="/Kishan_Busa_Resume.pdf" download="Kishan_Busa_Resume.pdf">
               <Download className="mr-2 h-5 w-5" /> Download Resume
             </a>
           </Button>
