@@ -102,6 +102,15 @@ export default function HeroSection() {
           <p className="leading-relaxed">
             My passion lies in creating <span className="text-primary font-semibold">robust, scalable solutions</span> and ensuring seamless user experiences across mobile and web platforms. Specializing in <span className="text-accent font-semibold">MVC and MVVM architecture</span> and state management techniques.
           </p>
+          <p className="leading-relaxed">
+            Beyond mobile development, I excel in <span className="text-primary font-semibold">backend engineering</span>, designing high-performance APIs and microservices with Node.js, Nest.js, and databases including <span className="text-accent font-semibold">MongoDB, PostgreSQL, and MySQL</span>. My expertise encompasses RESTful services, GraphQL, WebSocket protocols, and modern authentication systems including JWT and OAuth2.
+          </p>
+          <p className="leading-relaxed">
+            On the frontend, I specialize in <span className="text-accent font-semibold">React.js and Next.js</span>, creating dynamic, responsive, and SEO-optimized web applications. I integrate third-party APIs, implement state management with Redux and React Context, and leverage Next.js for server-side rendering and static site generation.
+          </p>
+          <p className="leading-relaxed">
+            I maintain high code quality through comprehensive <span className="text-primary font-semibold">unit testing</span> across all application layers using Jest, Mocha, Mockito, and Playwright. This ensures reliable, maintainable, and bug-free solutions that meet the highest standards of performance and stability.
+          </p>
         </div>
 
         {/* Enhanced CTA Buttons */}
