@@ -28,8 +28,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
-    value: '+91 7990907064',
-    link: 'tel:+917990907064'
+    value: '+91 7990907066',
+    link: 'tel:+917990907066'
   },
   {
     icon: MapPin,
@@ -169,10 +169,10 @@ export default function SecureContactSection() {
     }
     
     // Check email domain
-    const domain = formData.email.split('@')[1];
-    if (!SECURITY_CONFIG.ALLOWED_EMAIL_DOMAINS.includes(domain)) {
-      return { valid: false, message: 'Please use a valid email provider.' };
-    }
+    // const domain = formData.email.split('@')[1];
+    // if (!SECURITY_CONFIG.ALLOWED_EMAIL_DOMAINS.includes(domain)) {
+    //   return { valid: false, message: 'Please use a valid email provider.' };
+    // }
     
     // Check subject
     if (formData.subject.length < 5 || formData.subject.length > 100) {
@@ -433,10 +433,10 @@ export default function SecureContactSection() {
                   </div>
                   
                   {/* Security Info */}
-                  <div className="text-xs text-muted-foreground text-center">
+                  {/* <div className="text-xs text-muted-foreground text-center">
                     <p>Submissions today: {submissionCount}/{SECURITY_CONFIG.MAX_SUBMISSIONS_PER_DAY}</p>
                     <p>Rate limit: {SECURITY_CONFIG.MAX_SUBMISSIONS_PER_HOUR} per hour</p>
-                  </div>
+                  </div> */}
                   
                   <Button 
                     type="submit" 
@@ -525,22 +525,6 @@ export default function SecureContactSection() {
               </div>
             </div>
 
-            {/* Security Features */}
-            <Card className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border-blue-500/20">
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3 mb-3">
-                  <Shield className="w-5 h-5 text-blue-500" />
-                  <h4 className="font-medium text-foreground">Security Features</h4>
-                </div>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• reCAPTCHA protection</li>
-                  <li>• Rate limiting (3/hour, 10/day)</li>
-                  <li>• Spam detection</li>
-                  <li>• Input validation</li>
-                  <li>• Honeypot fields</li>
-                </ul>
-              </CardContent>
-            </Card>
 
             {/* Availability Status */}
             <Card className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border-green-500/20">
