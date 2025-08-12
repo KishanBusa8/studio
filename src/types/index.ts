@@ -54,3 +54,11 @@ export interface Education {
   logoUrl: string;
   logoHint: string;
 }
+
+export interface GitHubProject {
+  id: string;
+  name: string;
+  description: string;
+  repositoryUrl: string;
+  technologies: string[];
+}
