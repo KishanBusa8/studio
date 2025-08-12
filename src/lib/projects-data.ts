@@ -116,6 +116,24 @@ export const projectsData: Project[] = [
     ]
   },
   {
+    id: 'dorfy',
+    title: 'Dorfy App',
+    description: 'Lead Mobile App Developer',
+    longDescription: 'Dorfy is a fun app, powered with Artificial Intelligence and next-generation emotion detection that will make funny faces of your face from the camera and if you will laugh or even smile slight, Al will detect and you will lose.\n\nHere is where the fun begin\nFind up to 15+ different stages and 5+ different badges along with the attention and excitement levels in each stage. As There is nothing to sneeze at, so when you are ready to tussle your belly laugh, Dorfy will see if you can hold your smile or not. If you do you win or else you lose.Play multiple levels and earn a badge every time you cross a level. Increase your score by playing multiple stages and get closer to winning by increasing your score.\n\nIntegrate unity with flutter for the game play.',
+    technologies: ['Flutter', 'Dart','Unity With Flutter Integration',],
+    imageUrl: '/dorfy_logo.webp',
+    imageHint: 'AI vision interface',
+    gallery: [
+        { url: '/dorfy_1.webp', hint: 'App' },
+        { url: '/dorfy_2.webp', hint: 'App' },
+        { url: '/dorfy_3.webp', hint: 'App' },
+        { url: '/dorfy_4.webp', hint: 'App' },
+    ],
+    links: [
+      {id: '1', name: 'Mobile App', url: 'https://apps.apple.com/in/app/dorfy/id1589431999'},
+    ]
+  },
+  {
     id: 'act',
     title: 'ACT Examps',
     description: 'Lead Full Stack Developer',

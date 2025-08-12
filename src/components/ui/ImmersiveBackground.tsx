@@ -7,27 +7,34 @@ export default function ImmersiveBackground() {
   const { scrollYProgress } = useScroll();
   const [isMobile, setIsMobile] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [isLowPerformance, setIsLowPerformance] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const checkDevice = () => {
+      const isMobileDevice = window.innerWidth < 768;
+      const isLowPerfDevice = window.innerWidth < 1024 || 
+                             navigator.hardwareConcurrency < 4 ||
+                             /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      setIsMobile(isMobileDevice);
+      setIsLowPerformance(isLowPerfDevice);
     };
     
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+    return () => window.removeEventListener('resize', checkDevice);
   }, []);
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.2, 0.4, 0.2]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.15, 0.3, 0.15]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
 
-  // Optimized star counts for performance
-  const smallStarCount = 100;
-  const mediumStarCount = 100;
-  const largeStarCount = 100;
-  const shootingStarCount = 100;
+  // Optimized star counts for performance - desktop now matches mobile optimization
+  const smallStarCount = isMobile ? 12 : 15;
+  const mediumStarCount = isMobile ? 6 : 8;
+  const largeStarCount = isMobile ? 3 : 4;
+  const shootingStarCount = isMobile ? 2 : 3;
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -52,13 +59,13 @@ export default function ImmersiveBackground() {
                 top: `${Math.random() * 100}%`,
               }}
               animate={{
-                opacity: [0.2, 0.8, 0.2],
-                scale: [0.5, 1, 0.5],
+                opacity: [0.2, 0.6, 0.2],
+                scale: [0.5, 0.8, 0.5],
               }}
               transition={{
-                duration: 2 + Math.random() * 3,
+                duration: 2 + Math.random() * 2,
                 repeat: Infinity,
-                delay: Math.random() * 2,
+                delay: Math.random() * 1.5,
                 ease: "easeInOut",
               }}
             />
@@ -78,13 +85,13 @@ export default function ImmersiveBackground() {
                 top: `${Math.random() * 100}%`,
               }}
               animate={{
-                opacity: [0.3, 0.9, 0.3],
-                scale: [0.8, 1.2, 0.8],
+                opacity: [0.3, 0.7, 0.3],
+                scale: [0.8, 1.1, 0.8],
               }}
               transition={{
-                duration: 3 + Math.random() * 2,
+                duration: 2.5 + Math.random() * 1.5,
                 repeat: Infinity,
-                delay: Math.random() * 3,
+                delay: Math.random() * 2,
                 ease: "easeInOut",
               }}
             />
@@ -104,13 +111,13 @@ export default function ImmersiveBackground() {
                 top: `${Math.random() * 100}%`,
               }}
               animate={{
-                opacity: [0.4, 1, 0.4],
-                scale: [1, 1.5, 1],
+                opacity: [0.4, 0.8, 0.4],
+                scale: [1, 1.3, 1],
               }}
               transition={{
-                duration: 4 + Math.random() * 2,
+                duration: 3 + Math.random() * 1.5,
                 repeat: Infinity,
-                delay: Math.random() * 4,
+                delay: Math.random() * 2.5,
                 ease: "easeInOut",
               }}
             />
@@ -130,15 +137,15 @@ export default function ImmersiveBackground() {
                 top: `${Math.random() * 100}%`,
               }}
               animate={{
-                x: [0, isMobile ? 100 : 200],
-                y: [0, isMobile ? -50 : -100],
-                opacity: [0, 1, 0],
-                scale: [0, 1, 0],
+                x: [0, 80],
+                y: [0, -40],
+                opacity: [0, 0.8, 0],
+                scale: [0, 0.8, 0],
               }}
               transition={{
-                duration: isMobile ? 3 + Math.random() * 2 : 2 + Math.random() * 2,
+                duration: 2.5 + Math.random() * 1.5,
                 repeat: Infinity,
-                delay: Math.random() * 8,
+                delay: Math.random() * 6,
                 ease: "easeOut",
               }}
             />
@@ -160,8 +167,8 @@ export default function ImmersiveBackground() {
 export function SpatialOverlay() {
   const { scrollYProgress } = useScroll();
   
-  const overlayOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 0.05, 0.05, 0]);
-  const overlayBlur = useTransform(scrollYProgress, [0, 1], [0, 5]);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 0.03, 0.03, 0]);
+  const overlayBlur = useTransform(scrollYProgress, [0, 1], [0, 3]);
 
   return (
     <motion.div
