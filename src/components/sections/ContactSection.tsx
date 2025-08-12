@@ -27,13 +27,13 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
-    value: '+91 7990907064',
-    link: 'tel:+917990907064'
+    value: '+91 7990907066',
+    link: 'tel:+917990907066'
   },
   {
     icon: MapPin,
     title: 'Location',
-    value: 'India',
+    value: 'Gujarat, India',
     link: '#'
   }
 ];
