@@ -16,25 +16,25 @@ interface EnhancedSkill extends Skill {
 const skillsData: EnhancedSkill[] = [
   // Mobile Development
   { id: '1', name: 'Flutter / Dart', icon: Smartphone, level: 'Expert', category: 'mobile', progress: 95, experience: '6+ years', projects: 25 },
-  { id: '2', name: 'React Native', icon: Smartphone, level: 'Proficient', category: 'mobile', progress: 85, experience: '4+ years', projects: 15 },
+  { id: '2', name: 'React Native', icon: Smartphone, level: 'Proficient', category: 'mobile', progress: 80, experience: '2+ years', projects: 3 },
   
   // Frontend Development
-  { id: '3', name: 'React.js / Next.js', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94"></path><path d="M9.69 8h11.48"></path><path d="M7.38 12l5.74-9.94"></path><path d="M9.69 16L3.95 6.06"></path><path d="M14.31 16H2.83"></path><path d="M16.62 12l-5.74 9.94"></path></svg>, level: 'Advanced', category: 'frontend', progress: 90, experience: '3+ years', projects: 20 },
-  { id: '4', name: 'JavaScript', icon: Code2, level: 'Advanced', category: 'frontend', progress: 88, experience: '5+ years', projects: 30 },
-  { id: '5', name: 'TypeScript', icon: Code2, level: 'Advanced', category: 'frontend', progress: 85, experience: '3+ years', projects: 18 },
+  { id: '3', name: 'React.js / Next.js', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94"></path><path d="M9.69 8h11.48"></path><path d="M7.38 12l5.74-9.94"></path><path d="M9.69 16L3.95 6.06"></path><path d="M14.31 16H2.83"></path><path d="M16.62 12l-5.74 9.94"></path></svg>, level: 'Advanced', category: 'frontend', progress: 80, experience: '1.5 years', projects: 3 },
+  { id: '4', name: 'JavaScript', icon: Code2, level: 'Advanced', category: 'frontend', progress: 88, experience: '5+ years', projects: 15 },
+  { id: '5', name: 'TypeScript', icon: Code2, level: 'Advanced', category: 'frontend', progress: 85, experience: '3+ years', projects: 5 },
   
   // Backend Development
-  { id: '6', name: 'Node.js / Nest.js', icon: Server, level: 'Expert', category: 'backend', progress: 92, experience: '4+ years', projects: 22 },
+  { id: '6', name: 'Node.js / Nest.js', icon: Server, level: 'Expert', category: 'backend', progress: 92, experience: '2.5+ years', projects: 7 },
   
   // Database & Cloud
-  { id: '7', name: 'MongoDB', icon: Compass, level: 'Advanced', category: 'database', progress: 87, experience: '4+ years', projects: 20 },
-  { id: '8', name: 'PostgreSQL', icon: Database, level: 'Advanced', category: 'database', progress: 82, experience: '3+ years', projects: 12 },
-  { id: '9', name: 'Firebase Services', icon: Cloud, level: 'Expert', category: 'database', progress: 90, experience: '5+ years', projects: 25 },
+  { id: '7', name: 'MongoDB', icon: Compass, level: 'Advanced', category: 'database', progress: 85, experience: '2.5+ years', projects: 7 },
+  { id: '8', name: 'PostgreSQL', icon: Database, level: 'Proficient', category: 'database', progress: 75, experience: '1+ years', projects: 7 },
+  { id: '9', name: 'Firebase Services', icon: Cloud, level: 'Expert', category: 'database', progress: 90, experience: '5+ years', projects: 15 },
   
   // Tools & Testing
-  { id: '10', name: 'State Management', icon: Workflow, level: 'Expert', category: 'tools', progress: 93, experience: '6+ years', projects: 35 },
-  { id: '11', name: 'Unit Testing', icon: TestTube2, level: 'Advanced', category: 'tools', progress: 80, experience: '4+ years', projects: 15 },
-  { id: '12', name: 'Agile & Scrum', icon: Brain, level: 'Advanced', category: 'soft-skills', progress: 88, experience: '5+ years', projects: 40 },
+  { id: '10', name: 'State Management', icon: Workflow, level: 'Expert', category: 'tools', progress: 95, experience: '6+ years', projects: 25 },
+  { id: '11', name: 'Unit Testing', icon: TestTube2, level: 'Advanced', category: 'tools', progress: 85, experience: '2+ years', projects: 15 },
+  { id: '12', name: 'Agile & Scrum', icon: Brain, level: 'Advanced', category: 'soft-skills', progress: 88, experience: '5+ years', projects: 25 },
 ];
 
 const categoryIcons = {

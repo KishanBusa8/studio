@@ -72,7 +72,7 @@ export default function HeroSection() {
             </div>
             
             {/* Floating badges */}
-            <div className="absolute -top-2 -right-2 bg-accent text-white rounded-full p-2 shadow-lg animate-bounce">
+            <div className="absolute -top-2 -right-2 bg-chart-2 text-white rounded-full p-2 shadow-lg animate-bounce">
               <span className="text-xs font-bold">6+</span>
             </div>
             <div className="absolute -bottom-2 -left-2 bg-primary text-white rounded-full p-2 shadow-lg animate-bounce" style={{ animationDelay: '0.5s' }}>
