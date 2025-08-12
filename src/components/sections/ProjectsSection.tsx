@@ -62,17 +62,6 @@ export default function ProjectsSection() {
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     
-                    {/* Project Stats Overlay */}
-                    <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Badge variant="secondary" className="bg-white/90 text-black text-xs">
-                        <Star className="w-3 h-3 mr-1" />
-                        4.8
-                      </Badge>
-                      <Badge variant="secondary" className="bg-white/90 text-black text-xs">
-                        <Download className="w-3 h-3 mr-1" />
-                        10K+
-                      </Badge>
-                    </div>
                   </div>
                 </Link>
 

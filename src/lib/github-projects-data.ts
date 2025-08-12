@@ -33,7 +33,7 @@ export const githubProjectsData: GitHubProject[] = [
     id: 'bloc-boilerplate',
     name: 'Flutter Bloc Boilerplate',
     description: 'A Flutter Bloc boilerplate project with authentication, themes, and multi-language support. Complete Flutter boilerplate with clean architecture, MVVM pattern, and a modern UI.',
-    repositoryUrl: 'https://github.com/KishanBusa8/flutter-boilerplate',
+    repositoryUrl: 'https://github.com/KishanBusa8/flutter-bloc-boilerplate',
     technologies: ['Flutter', 'Bloc', 'Clean Architecture', 'MVVM']
   },
   {
