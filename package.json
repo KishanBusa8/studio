@@ -2,6 +2,9 @@
   "name": "nextn",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": "Kishan Busa",
+  "description": "Personal portfolio website built with Next.js, React, and Tailwind CSS",
   "scripts": {
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
@@ -9,7 +12,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "licenses": "node scripts/generate-licenses.js > LICENSES.md"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.8.0",
