@@ -58,7 +58,7 @@ export default function GitHubProjectsSection() {
         
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" asChild>
-            <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/KishanBusa8" target="_blank" rel="noopener noreferrer">
               <Github className="mr-2 h-5 w-5" />
               View All Projects on GitHub
               <ArrowRight className="ml-2 h-5 w-5" />
