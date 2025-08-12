@@ -193,8 +193,7 @@ export const projectsData: Project[] = [
         { url: '/hire_5.jpeg', hint: 'App' },
     ],
     links: [
-
-
+        {id: '1', name: 'Mobile App', url: 'https://apps.apple.com/in/app/hire-e-bike/id1629227630'},
     ]
   },
 ];
