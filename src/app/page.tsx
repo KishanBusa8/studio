@@ -4,6 +4,8 @@ import HeroSection from '@/components/sections/HeroSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import GitHubProjectsSection from '@/components/sections/GitHubProjectsSection';
 import SkillsSection from '@/components/sections/SkillsSection';
+import ExperienceSection from '@/components/sections/ExperienceSection';
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import BlogSection from '@/components/sections/BlogSection';
 import EducationSection from '@/components/sections/EducationSection';
@@ -22,11 +24,19 @@ export default function Home() {
          <div className="container mx-auto px-4">
            <Separator className="my-12 md:my-16 bg-border/60" />
         </div>
-        <GitHubProjectsSection />
+        <ExperienceSection />
          <div className="container mx-auto px-4">
            <Separator className="my-12 md:my-16 bg-border/60" />
         </div>
         <SkillsSection />
+        <div className="container mx-auto px-4">
+           <Separator className="my-12 md:my-16 bg-border/60" />
+        </div>
+        <TestimonialsSection />
+        <div className="container mx-auto px-4">
+           <Separator className="my-12 md:my-16 bg-border/60" />
+        </div>
+        <GitHubProjectsSection />
         <div className="container mx-auto px-4">
            <Separator className="my-12 md:my-16 bg-border/60" />
         </div>

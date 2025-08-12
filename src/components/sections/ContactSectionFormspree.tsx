@@ -8,8 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import type { SocialLink } from '@/types';
 import { Github, Linkedin, Layers, Download, Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 
 const socialLinks: SocialLink[] = [
   { id: '1', name: 'GitHub', url: 'https://github.com/KishanBusa8', icon: Github },
@@ -38,49 +37,31 @@ const contactInfo = [
   }
 ];
 
-export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+export default function ContactSectionFormspree() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  // Initialize EmailJS
-  useEffect(() => {
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY');
-  }, []);
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
+
+    const formData = new FormData(e.currentTarget);
     
     try {
-      // EmailJS configuration
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+      // Replace 'YOUR_FORMSPREE_ENDPOINT' with your actual Formspree endpoint
+      const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-      // Prepare template parameters
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: 'Kishan Busa',
-        reply_to: formData.email,
-      };
-
-      // Send email using EmailJS
-      const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
-      
-      if (response.status === 200) {
+      if (response.ok) {
         setIsSubmitted(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        e.currentTarget.reset();
         
         // Reset success message after 5 seconds
         setTimeout(() => {
@@ -90,7 +71,7 @@ export default function ContactSection() {
         throw new Error('Failed to send message');
       }
     } catch (err) {
-      console.error('EmailJS Error:', err);
+      console.error('Formspree Error:', err);
       setError('Failed to send message. Please try again or contact me directly via email.');
       
       // Reset error after 5 seconds
@@ -100,13 +81,6 @@ export default function ContactSection() {
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
   };
 
   return (
@@ -165,8 +139,6 @@ export default function ContactSection() {
                         name="name"
                         type="text"
                         required
-                        value={formData.name}
-                        onChange={handleInputChange}
                         placeholder="Your name"
                         className="border-border/50 focus:border-primary transition-colors duration-300"
                         disabled={isSubmitting}
@@ -181,8 +153,6 @@ export default function ContactSection() {
                         name="email"
                         type="email"
                         required
-                        value={formData.email}
-                        onChange={handleInputChange}
                         placeholder="your.email@example.com"
                         className="border-border/50 focus:border-primary transition-colors duration-300"
                         disabled={isSubmitting}
@@ -199,8 +169,6 @@ export default function ContactSection() {
                       name="subject"
                       type="text"
                       required
-                      value={formData.subject}
-                      onChange={handleInputChange}
                       placeholder="What's this about?"
                       className="border-border/50 focus:border-primary transition-colors duration-300"
                       disabled={isSubmitting}
@@ -215,8 +183,6 @@ export default function ContactSection() {
                       id="message"
                       name="message"
                       required
-                      value={formData.message}
-                      onChange={handleInputChange}
                       placeholder="Tell me about your project or idea..."
                       rows={6}
                       className="border-border/50 focus:border-primary transition-colors duration-300 resize-none"
@@ -328,4 +294,4 @@ export default function ContactSection() {
       </div>
     </section>
   );
-}
+} 
