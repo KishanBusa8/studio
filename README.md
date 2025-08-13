@@ -2,6 +2,19 @@
 
 Welcome to my personal portfolio! This is a modern, responsive portfolio website built with Next.js, React, and Tailwind CSS. It showcases my skills, projects, experience, and professional background as a FullStack Mobile App Developer.
 
+## 🎯 SEO Optimized Portfolio
+
+This portfolio is specifically optimized for search engines to rank well for "Kishan Busa" searches. It includes comprehensive SEO features:
+
+- **Structured Data (JSON-LD)**: Enhanced search result snippets
+- **Open Graph & Twitter Cards**: Optimized social media sharing
+- **XML Sitemap**: Automatic sitemap generation
+- **Robots.txt**: Search engine crawling instructions
+- **Meta Tags**: Comprehensive meta descriptions and keywords
+- **Performance Optimized**: Fast loading times and Core Web Vitals
+- **Mobile-First**: Responsive design for all devices
+- **Blog Integration**: Technical blog posts for content marketing
+
 ![Portfolio Screenshot](https://placehold.co/800x400.png)
 
 ## ✨ Features
