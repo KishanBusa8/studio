@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Sun, Moon, Monitor } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'light' | 'dark' | 'system'>('system');
+  const [theme, setTheme] = useState<'light' | 'dark' >('dark');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | 'system' || 'system';
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark'  || 'dark';
     setTheme(savedTheme);
   }, []);
 
@@ -18,19 +18,14 @@ export default function ThemeToggle() {
     if (!mounted) return;
 
     const root = window.document.documentElement;
-    
-    if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.classList.toggle('dark', systemTheme === 'dark');
-    } else {
-      root.classList.toggle('dark', theme === 'dark');
-    }
+  
+    root.classList.toggle('dark', theme === 'dark');
     
     localStorage.setItem('theme', theme);
   }, [theme, mounted]);
 
   const toggleTheme = () => {
-    const themes: ('light' | 'dark' | 'system')[] = ['light', 'dark', 'system'];
+    const themes: ('light' | 'dark' )[] = ['light', 'dark'];
     const currentIndex = themes.indexOf(theme);
     const nextIndex = (currentIndex + 1) % themes.length;
     setTheme(themes[nextIndex]);
@@ -54,7 +49,6 @@ export default function ThemeToggle() {
     >
       {theme === 'light' && <Sun className="h-4 w-4 text-primary group-hover:text-accent transition-colors duration-300" />}
       {theme === 'dark' && <Moon className="h-4 w-4 text-primary group-hover:text-accent transition-colors duration-300" />}
-      {theme === 'system' && <Monitor className="h-4 w-4 text-primary group-hover:text-accent transition-colors duration-300" />}
     </Button>
   );
 } 
