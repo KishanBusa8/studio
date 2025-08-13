@@ -47,8 +47,8 @@ export default function ThemeToggle() {
       className="w-9 h-9 rounded-full hover:bg-accent/10 transition-colors duration-300 group"
       title={`Current theme: ${theme}`}
     >
-      {theme === 'light' && <Sun className="h-4 w-4 text-primary group-hover:text-accent transition-colors duration-300" />}
-      {theme === 'dark' && <Moon className="h-4 w-4 text-primary group-hover:text-accent transition-colors duration-300" />}
+      {theme === 'dark' && <Sun className="h-4 w-4 text-primary group-hover:text-accent transition-colors duration-300" />}
+      {theme === 'light' && <Moon className="h-4 w-4 text-primary group-hover:text-accent transition-colors duration-300" />}
     </Button>
   );
 } 
