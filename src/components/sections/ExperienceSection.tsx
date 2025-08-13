@@ -218,22 +218,6 @@ export default function ExperienceSection() {
             })}
           </div>
         </div>
-
-        {/* Experience Summary */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center p-6 bg-card rounded-lg border border-border hover:shadow-lg transition-shadow duration-300">
-            <div className="text-3xl font-bold text-primary mb-2">6+</div>
-            <div className="text-sm text-muted-foreground">Years Experience</div>
-          </div>
-          <div className="text-center p-6 bg-card rounded-lg border border-border hover:shadow-lg transition-shadow duration-300">
-            <div className="text-3xl font-bold text-accent mb-2">25+</div>
-            <div className="text-sm text-muted-foreground">Projects Delivered</div>
-          </div>
-          <div className="text-center p-6 bg-card rounded-lg border border-border hover:shadow-lg transition-shadow duration-300">
-            <div className="text-3xl font-bold text-accent mb-2">100%</div>
-            <div className="text-sm text-muted-foreground">Success Rate</div>
-          </div>
-        </div>
       </div>
     </section>
   );
