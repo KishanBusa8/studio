@@ -68,7 +68,7 @@ export default function SEOHead({
     'Third-party APIs',
     'Modern Web Technologies'
   ],
-  image = 'https://kishanbusa.com/profile.jpeg',
+  image = 'https://kishanbusa.com/profile.heic',
   url = 'https://kishanbusa.com',
   type = 'website',
   author = 'Kishan Busa',
@@ -128,7 +128,7 @@ export default function SEOHead({
 
       {/* Favicon and App Icons */}
       <link rel="icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" href="/profile.jpeg" />
+      <link rel="apple-touch-icon" href="/profile.heic" />
       <link rel="manifest" href="/manifest.json" />
 
       {/* Preconnect for Performance */}

@@ -80,13 +80,13 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
       publishedTime: post.publishedTime,
       modifiedTime: post.modifiedTime,
       authors: ['Kishan Busa'],
-      images: ['/profile.jpeg'],
+      images: ['/profile.heic'],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: ['/profile.jpeg'],
+      images: ['/profile.heic'],
     },
   };
 }
@@ -142,7 +142,7 @@ export default function BlogPost({ params }: BlogPostProps) {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <img
-              src="/profile.jpeg"
+              src="/profile.heic"
               alt="Kishan Busa"
               className="w-12 h-12 rounded-full"
             />

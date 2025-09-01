@@ -12,13 +12,13 @@ export default function manifest(): MetadataRoute.Manifest {
     orientation: 'portrait-primary',
     icons: [
       {
-        src: '/profile.jpeg',
+        src: '/profile.heic',
         sizes: '192x192',
         type: 'image/jpeg',
         purpose: 'maskable',
       },
       {
-        src: '/profile.jpeg',
+        src: '/profile.heic',
         sizes: '512x512',
         type: 'image/jpeg',
         purpose: 'maskable',
