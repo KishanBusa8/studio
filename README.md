@@ -82,7 +82,7 @@ Customizing this portfolio is straightforward. Most of the content is located wi
 -   **`EducationSection.tsx`**: Update your educational background.
 -   **`ContactSection.tsx`**: Update your email, resume link, and social media URLs.
 -   **`src/app/globals.css`**: Change the color scheme and theme by modifying the CSS variables at the root level.
--   **`public/`**: Replace `profile.heic` with your own profile picture.
+-   **`public/`**: Replace `profile.jpg` with your own profile picture.
 
 ### Data Files
 

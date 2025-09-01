@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     description: 'Kishan Busa is a FullStack Developer with 6+ years of experience in Flutter, React.js, Node.js, and mobile app development. Expert in creating robust, scalable solutions and seamless user experiences.',
     images: [
       {
-        url: '/profile.heic',
+        url: '/profile.jpg',
         width: 1200,
         height: 630,
         alt: 'Kishan Busa - FullStack Developer',
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Kishan Busa - FullStack Developer | Flutter Expert | React.js Developer',
     description: 'Kishan Busa is a FullStack Developer with 6+ years of experience in Flutter, React.js, Node.js, and mobile app development.',
-    images: ['/profile.heic'],
+    images: ['/profile.jpg'],
     creator: '@kishanbusa',
   },
   robots: {
@@ -134,7 +134,7 @@ export default function RootLayout({
               "jobTitle": "FullStack Developer",
               "description": "FullStack Developer with 6+ years of experience in Flutter, React.js, Node.js, and mobile app development",
               "url": "https://kishanbusa.com",
-              "image": "https://kishanbusa.com/profile.heic",
+              "image": "https://kishanbusa.com/profile.jpg",
               "email": "kishanbusa08@gmail.com",
               "sameAs": [
                 "https://github.com/KishanBusa8",

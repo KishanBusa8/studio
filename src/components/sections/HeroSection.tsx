@@ -62,7 +62,7 @@ export default function HeroSection() {
             {/* Main image container */}
             <div className="relative h-full w-full rounded-full overflow-hidden shadow-2xl border-4 border-primary/20 animate-profile-ping group">
               <Image
-                src="/profile.heic"
+                src="/profile.jpg"
                 alt="Profile Picture"
                 width={200}
                 height={200}
