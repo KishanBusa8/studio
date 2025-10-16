@@ -6,7 +6,7 @@ export const projectsData: Project[] = [
     id: 'doctor-garage',
     title: 'Doctor Garage',
     description: 'Spearheaded the development and enhancement of the Doctor Garage User and Mechanic Mobile Apps, Backend Service and Admin Panle, ensuring seamless user experience and high performance across multiple devices while building supporting backend services.',
-    longDescription: 'Doctor Garage is a platform connecting bike owners with skilled mechanics for doorstep services. Users can book services, choose specific issues, and add spares for their bikes. Mechanics can accept or reject bookings, update service status, and manage spare parts. Both receive email and push notifications for updates. Mechanics can track earnings and withdraw payments. The platform ensures a seamless experience for both users and mechanics, offering flexibility, transparency, and convenience in bike servicing.',
+    longDescription: 'Say goodbye to long waits at service centers! With Doctor Garage, enjoy professional two-wheeler servicing from the comfort of your home or office.\n\nDoctor Garage is a platform connecting bike owners with skilled mechanics for doorstep services. Users can book services, choose specific issues, and add spares for their bikes. Mechanics can accept or reject bookings, update service status, and manage spare parts. Both receive email and push notifications for updates. Mechanics can track earnings and withdraw payments. The platform ensures a seamless experience for both users and mechanics, offering flexibility, transparency, and convenience in bike servicing.\n\nOur easy-to-use app allows you to:\n✅ Register your account in seconds\n🏍️ Add and manage your two-wheelers\n🧰 Book service appointments at your preferred time & location\n🔧 Choose from a wide range of services – General service, Repairs, Oil change & more\n💬 Track your service status and get real-time updates\n\nWhether you’re a busy professional, a student, or just want hassle-free bike service, Doctor Garage brings the workshop to your doorstep.\n\nKey Features:\nUser-friendly interface\nVerified and trained mechanics\nGenuine spare parts\nTransparent pricing\nSecure payments',
     technologies: ['Flutter', 'Node.js', 'Nest.JS', 'Next.JS', 'Google Maps API', 'Mongo DB', 'Email Services'],
     imageUrl: '/dg_logo.png',
     imageHint: 'logistics app interface',
@@ -28,6 +28,27 @@ export const projectsData: Project[] = [
     links: [
        {id: '1', name: 'Doctor Garage App', url: 'https://play.google.com/store/apps/details?id=com.doctor.garage.app'},
        {id: '2', name: 'Doctor Garage Web App', url: 'https://doorstep.doctorgarage.in'},
+    ]
+  },
+  {
+    id: 'meetup-me',
+    title: 'Meetup',
+    description: 'Book Meeting & Study Spaces with Ease.',
+    longDescription: 'Meet Up is a flex work and meeting space with open desk spaces, private meeting pods, conference and meeting halls and an inbuilt café; all located in Al Araimi Boulevard.\n\nMeet Up is designed to provide professionals and students with the opportunity to meet, work and study in a productive, convenient, and comfortable environment. \n\nOur easy-to-use app allows you to:\n✅ Book a meeting room or study space in seconds\n💻 Access open desk spaces, private meeting pods, conference and meeting halls\n🍴 Enjoy an inbuilt café\n🔍 Find the perfect space for your needs\n\nWhether you’re a professional, a student, or just need a space to work, Meet Up has you covered. Book your next meeting or study space today!',
+    technologies: ['Flutter', 'Dart', 'Firebase', 'Firestore', 'Firebase Cloud Functions', 'REST APIs'],
+    imageUrl: '/meetup_logo.jpeg',
+    imageHint: 'Meeting & Study Spaces App',      
+    gallery: [
+        { url: '/meetup_1.png', hint: 'Welcome Screen' },
+        { url: '/meetup_2.png', hint: 'Login & Register Screen' },
+        { url: '/meetup_3.png', hint: 'Home Screen' },
+        { url: '/meetup_4.png', hint: 'Room Details Screen' },
+        { url: '/meetup_5.png', hint: 'Check Available Slots/Booking Screebn' },
+        { url: '/meetup_6.png', hint: 'Review/Cart Screen' },
+        { url: '/meetup_7.png', hint: 'Profile Screen' },
+    ],
+    links: [
+       {id: '1', name: 'Website', url: 'https://meetup.me'},
     ]
   },
   {
