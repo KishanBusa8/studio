@@ -99,7 +99,7 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Project Highlights */}
-                  <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
+                  {/* <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <Users className="w-3 h-3" />
                       <span>Active Users</span>
@@ -108,7 +108,7 @@ export default function ProjectsSection() {
                       <Star className="w-3 h-3" />
                       <span>High Rating</span>
                     </div>
-                  </div>
+                  </div> */}
                 </CardContent>
 
                 <CardFooter className="flex justify-between items-center pt-4 border-t border-border/50">

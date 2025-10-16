@@ -2,7 +2,6 @@ import type { Project } from '@/types';
 
 
 export const projectsData: Project[] = [
-  
   {
     id: 'doctor-garage',
     title: 'Doctor Garage',
@@ -27,7 +26,35 @@ export const projectsData: Project[] = [
         
     ],
     links: [
-       
+       {id: '1', name: 'Doctor Garage App', url: 'https://play.google.com/store/apps/details?id=com.doctor.garage.app'},
+       {id: '2', name: 'Doctor Garage Web App', url: 'https://doorstep.doctorgarage.in'},
+    ]
+  },
+  {
+    id: 'cia-pyrotech',
+    title: 'CIA Pyrotech',
+    description: 'Smart inventory & billing app with barcode generation for internal use.',
+    longDescription: 'Cia Pyrotech Inventory App is a dedicated internal-use application designed to simplify billing, barcoding, and inventory management for retail and warehouse operations.Built for internal store management, this app ensures accurate tracking of stock, smooth billing, and real-time barcode generation all in one place. With a clean interface and efficient features, it helps store teams focus on operations without the need for complex systems or external integrations.',
+    technologies: ['Flutter', 'Dart', 'REST APIs'],
+    imageUrl: '/cia_logo.png',
+    imageHint: 'Inventory & Billing App',      
+    gallery: [
+        { url: '/cia_dashboard.png', hint: 'Dashboard' },
+        { url: '/cia_parties.png', hint: 'Billing' },
+        { url: '/cia_party_details.png', hint: 'Party Details' },
+        { url: '/cia_items.png', hint: 'Barcode Generation' },
+        { url: '/cia_items_details.png', hint: 'Items Details' },
+        { url: '/cia_items_details_2.png', hint: 'Items Details 2' },
+        { url: '/cia_add_items.png', hint: 'Add Items' },
+        { url: '/cia_pendig_payment_summary.png', hint: 'Pending Payment Summary' },
+        { url: '/cia_sales_summary.png', hint: 'Sales Summary' },
+        { url: '/cia_payment_methods.png', hint: 'Payment Methods' },
+        { url: '/cia_reports.png', hint: 'Reports' },
+        { url: '/cia_category_report.png', hint: 'Category Report' },
+        { url: '/cia_category_chart_report.png', hint: 'Category Chart Report' },
+    ],
+    links: [
+       {id: '1', name: 'Mobile App', url: 'https://play.google.com/store/apps/details?id=com.app.cia.pyrotech.inventory'},
     ]
   },
    {
