@@ -81,7 +81,7 @@ export function ImageGallery({
   }
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={onClose} >
       <DialogContent className="bg-background/95 backdrop-blur-md border-0 w-screen h-screen max-w-none flex items-center justify-center p-0 dark:bg-black/90">
         <DialogTitle className="sr-only">Project Image Gallery</DialogTitle>
         <DialogDescription className="sr-only">
@@ -91,7 +91,7 @@ export function ImageGallery({
         <div className="relative w-full h-full flex items-center justify-center">
           
           {/* Close Button */}
-          <Button
+          {/* <Button
             variant="ghost"
             size="icon"
             onClick={onClose}
@@ -99,7 +99,7 @@ export function ImageGallery({
           >
             <X className="h-6 w-6" />
             <span className="sr-only">Close</span>
-          </Button>
+          </Button> */}
 
           {/* Image Counter */}
           {images.length > 1 && (
