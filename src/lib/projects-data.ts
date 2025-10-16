@@ -205,6 +205,28 @@ export const projectsData: Project[] = [
     ]
   },
   {
+    id: 'tapobhumi-praneta',
+    title: 'Tapobhumi Praneta',
+    description: 'This APP is for individual use for the information about Guruji’s daily update',
+    longDescription: 'Vihar Update (Daily update of engagements):\nThis feature of the App updates the users and sends information on where-about & Important engagements of the Jain monk’s day with time and location.\n\nCalendar:\nThe auspicious days such as festivals, events and celebrations of the Jain community is highlighted in the calendar.\nDainik Dairy (Daily Calendar):It provides a daily in-sight into the routine activities.\n\nE-book:\nThis is a collection of religious Jain books, journals, articles & magazines that are recommended for enlightenment about the religion.\n\nShankha Samadhan (Enquiries answered):\nThis convenient feature is to help and assist users to clear doubts and answer their problems by the guruji.\n\nGallery:\nIt consists of photos, videos and other multimedia uploaded on their YouTube channel & featured channels.\n\nAaj Ka Niyam (Oath for Today):\nThis feature takes into account the oath for the day and help users follow it.',
+    technologies: ['Flutter', 'Dart','Firebase', 'Firestore', 'Firebase Cloud Functions', 'REST APIs', 'Push Notifications'],
+    imageUrl: '/tp_logo.png',
+    imageHint: 'Tapobhumi Praneta App',
+    gallery: [
+        { url: '/tp_1.jpg', hint: 'Welcome Screen' },
+        { url: '/tp_2.jpg', hint: 'Vihar Update' },
+        { url: '/tp_3.jpg', hint: 'Ebook' },
+        { url: '/tp_4.jpg', hint: 'Shankha Samadhan' },
+        { url: '/tp_5.jpg', hint: 'Gallery' },
+        { url: '/tp_7.jpg', hint: 'Gallery 2' },
+        { url: '/tp_8.jpg', hint: 'Aaj Ka Niyam' },
+    ],
+    links: [
+        {id: '1', name: 'Tapobhumi Praneta App', url: 'https://play.google.com/store/apps/details?id=com.tapobhumi.user&hl=en_IN'},
+    ]
+  },
+  
+  {
     id: 'despatchy',
     title: 'Despatchy',
     description: 'Lead Full Stack Developer',
