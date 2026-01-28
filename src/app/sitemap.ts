@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://kishanbusa.com'
-  
+
   // Blog posts data (this would typically come from a CMS or database)
   const blogPosts = [
     {
@@ -14,14 +14,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date('2024-01-20'),
     },
   ]
-  
+
   const blogUrls = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
-  
+
   return [
     {
       url: baseUrl,
@@ -90,5 +90,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     ...blogUrls,
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ]
 }
