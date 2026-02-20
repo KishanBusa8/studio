@@ -21,7 +21,7 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           <CodeXml className="h-7 w-7 text-primary group-hover:text-accent transition-colors duration-300" />
-          <span className="font-headline text-2xl font-bold text-primary group-hover:text-accent transition-colors duration-300">DevCard</span>
+          <span className="font-headline text-2xl font-bold text-primary group-hover:text-accent transition-colors duration-300">KB</span>
         </Link>
         
         <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
