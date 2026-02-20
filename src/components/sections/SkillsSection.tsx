@@ -15,24 +15,24 @@ interface EnhancedSkill extends Skill {
 
 const skillsData: EnhancedSkill[] = [
   // Mobile Development
-  { id: '1', name: 'Flutter / Dart', icon: Smartphone, level: 'Expert', category: 'mobile', progress: 95, experience: '6+ years', projects: 25 },
+  { id: '1', name: 'Flutter / Dart', icon: Smartphone, level: 'Expert', category: 'mobile', progress: 95, experience: '7+ years', projects: 25 },
   { id: '2', name: 'React Native', icon: Smartphone, level: 'Proficient', category: 'mobile', progress: 80, experience: '2+ years', projects: 3 },
-  
+
   // Frontend Development
   { id: '3', name: 'React.js / Next.js', icon: () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M14.31 8l5.74 9.94"></path><path d="M9.69 8h11.48"></path><path d="M7.38 12l5.74-9.94"></path><path d="M9.69 16L3.95 6.06"></path><path d="M14.31 16H2.83"></path><path d="M16.62 12l-5.74 9.94"></path></svg>, level: 'Advanced', category: 'frontend', progress: 80, experience: '1.5 years', projects: 3 },
   { id: '4', name: 'JavaScript', icon: Code2, level: 'Advanced', category: 'frontend', progress: 88, experience: '5+ years', projects: 15 },
   { id: '5', name: 'TypeScript', icon: Code2, level: 'Advanced', category: 'frontend', progress: 85, experience: '3+ years', projects: 5 },
-  
+
   // Backend Development
   { id: '6', name: 'Node.js / Nest.js', icon: Server, level: 'Expert', category: 'backend', progress: 92, experience: '2.5+ years', projects: 7 },
-  
+
   // Database & Cloud
   { id: '7', name: 'MongoDB', icon: Compass, level: 'Advanced', category: 'database', progress: 85, experience: '2.5+ years', projects: 7 },
   { id: '8', name: 'PostgreSQL', icon: Database, level: 'Proficient', category: 'database', progress: 75, experience: '1+ years', projects: 7 },
   { id: '9', name: 'Firebase Services', icon: Cloud, level: 'Expert', category: 'database', progress: 90, experience: '5+ years', projects: 15 },
-  
+
   // Tools & Testing
-  { id: '10', name: 'State Management', icon: Workflow, level: 'Expert', category: 'tools', progress: 95, experience: '6+ years', projects: 25 },
+  { id: '10', name: 'State Management', icon: Workflow, level: 'Expert', category: 'tools', progress: 95, experience: '7+ years', projects: 25 },
   { id: '11', name: 'Unit Testing', icon: TestTube2, level: 'Advanced', category: 'tools', progress: 85, experience: '2+ years', projects: 15 },
   { id: '12', name: 'Agile & Scrum', icon: Brain, level: 'Advanced', category: 'soft-skills', progress: 88, experience: '5+ years', projects: 25 },
 ];
@@ -62,11 +62,11 @@ const SkillIcon = ({ icon: IconComponent, className }: { icon: Skill['icon'], cl
 
 export default function SkillsSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [animatedProgress, setAnimatedProgress] = useState<{[key: string]: number}>({});
+  const [animatedProgress, setAnimatedProgress] = useState<{ [key: string]: number }>({});
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const progressData: {[key: string]: number} = {};
+      const progressData: { [key: string]: number } = {};
       skillsData.forEach(skill => {
         progressData[skill.id] = skill.progress;
       });
@@ -76,8 +76,8 @@ export default function SkillsSection() {
     return () => clearTimeout(timer);
   }, []);
 
-  const filteredSkills = selectedCategory === 'all' 
-    ? skillsData 
+  const filteredSkills = selectedCategory === 'all'
+    ? skillsData
     : skillsData.filter(skill => skill.category === selectedCategory);
 
   const categories = [
@@ -93,7 +93,7 @@ export default function SkillsSection() {
     <section id="skills" className="py-16 md:py-24 bg-gradient-to-br from-secondary/30 to-background animate-section-slide-up relative" style={{ animationDelay: '0.4s' }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -110,11 +110,10 @@ export default function SkillsSection() {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                selectedCategory === category.id
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === category.id
                   ? 'bg-primary text-primary-foreground shadow-lg'
                   : 'bg-card text-muted-foreground hover:bg-primary/10 hover:text-primary border border-border'
-              }`}
+                }`}
             >
               {category.name}
               <Badge variant="secondary" className="ml-2 text-xs">
@@ -129,16 +128,16 @@ export default function SkillsSection() {
           {filteredSkills.map((skill, index) => {
             const CategoryIcon = categoryIcons[skill.category];
             const categoryGradient = categoryColors[skill.category];
-            
+
             return (
-              <Card 
-                key={skill.id} 
+              <Card
+                key={skill.id}
                 className="group hover:shadow-xl hover:scale-[1.02] transform transition-all duration-300 ease-out relative overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Category Indicator */}
                 <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${categoryGradient}`}></div>
-                
+
                 <CardHeader className="pb-4">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
@@ -164,15 +163,15 @@ export default function SkillsSection() {
                       <div className="text-xs text-muted-foreground">{skill.projects} projects</div>
                     </div>
                   </div>
-                  
+
                   {/* Progress Bar */}
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs text-muted-foreground">
                       <span>Proficiency</span>
                       <span>{animatedProgress[skill.id] || 0}%</span>
                     </div>
-                    <Progress 
-                      value={animatedProgress[skill.id] || 0} 
+                    <Progress
+                      value={animatedProgress[skill.id] || 0}
                       className="h-2 bg-secondary"
                     />
                   </div>
@@ -202,7 +201,7 @@ export default function SkillsSection() {
         {/* Skills Summary */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="text-center p-6 bg-card rounded-lg border border-border">
-            <div className="text-3xl font-bold text-primary mb-2">6+</div>
+            <div className="text-3xl font-bold text-primary mb-2">7+</div>
             <div className="text-sm text-muted-foreground">Years Experience</div>
           </div>
           <div className="text-center p-6 bg-card rounded-lg border border-border">

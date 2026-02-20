@@ -9,7 +9,7 @@ export default function HeroSection() {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   const roles = [
     'FullStack Mobile App Developer',
     'Flutter Expert',
@@ -22,7 +22,7 @@ export default function HeroSection() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       const currentRole = roles[currentIndex];
-      
+
       if (!isDeleting) {
         if (currentText.length < currentRole.length) {
           setCurrentText(currentRole.slice(0, currentText.length + 1));
@@ -58,7 +58,7 @@ export default function HeroSection() {
           <div className="relative h-32 w-32 md:h-40 md:w-40 mx-auto">
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full blur-xl animate-pulse"></div>
-            
+
             {/* Main image container */}
             <div className="relative h-full w-full rounded-full overflow-hidden shadow-2xl border-4 border-primary/20 animate-profile-ping group">
               <Image
@@ -70,10 +70,10 @@ export default function HeroSection() {
                 data-ai-hint="professional portrait Kishan Busa"
               />
             </div>
-            
+
             {/* Floating badges */}
             <div className="absolute -top-2 -right-2 bg-chart-2 text-white rounded-full p-2 shadow-lg animate-bounce">
-              <span className="text-xs font-bold">6+</span>
+              <span className="text-xs font-bold">7+</span>
             </div>
             <div className="absolute -bottom-2 -left-2 bg-primary text-white rounded-full p-2 shadow-lg animate-bounce" style={{ animationDelay: '0.5s' }}>
               <span className="text-xs font-bold">25+</span>
@@ -85,7 +85,7 @@ export default function HeroSection() {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
           Kishan Busa
         </h1>
-        
+
         {/* Animated Role Display */}
         <div className="h-8 md:h-10 mb-6 flex justify-center items-center">
           <p className="text-xl md:text-2xl text-primary/80 font-headline">
@@ -97,7 +97,7 @@ export default function HeroSection() {
         {/* Enhanced Description */}
         <div className="max-w-4xl mx-auto text-lg text-left text-foreground/80 mb-10 space-y-6">
           <p className="leading-relaxed">
-            I am a highly skilled and results-driven <span className="text-primary font-semibold">FullStack Developer</span> with over <span className="text-accent font-bold">6 years</span> of experience in mobile application development using Flutter and React Native, and <span className="text-accent font-bold">2 years</span> of expertise in backend and frontend development with Node.js, Nest.js, and React.js.
+            I am a highly skilled and results-driven <span className="text-primary font-semibold">FullStack Developer</span> with over <span className="text-accent font-bold">7 years</span> of experience in mobile application development using Flutter and React Native, and <span className="text-accent font-bold">2 years</span> of expertise in backend and frontend development with Node.js, Nest.js, and React.js.
           </p>
           <p className="leading-relaxed">
             My passion lies in creating <span className="text-primary font-semibold">robust, scalable solutions</span> and ensuring seamless user experiences across mobile and web platforms. Specializing in <span className="text-accent font-semibold">MVC and MVVM architecture</span> and state management techniques.
@@ -123,7 +123,7 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </Link>
           </Button>
-          
+
           <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground group">
             <Link href="mailto:kishanbusa08@gmail.com">
               <Mail className="mr-2 h-5 w-5" /> Get In Touch
@@ -134,7 +134,7 @@ export default function HeroSection() {
         {/* Quick Stats */}
         <div className="grid grid-cols-3 gap-6 max-w-md mx-auto mb-8">
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary">6+</div>
+            <div className="text-2xl font-bold text-primary">7+</div>
             <div className="text-sm text-muted-foreground">Years Experience</div>
           </div>
           <div className="text-center">
